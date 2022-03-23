@@ -1,6 +1,6 @@
 .add-playlist-box {
   background-color: var(--theme-clr);
-  max-width: 25rem;
+  max-width: 30rem;
   width: max-content;
   flex-direction: column;
   color: var(--clr-white);

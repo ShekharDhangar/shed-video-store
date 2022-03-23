@@ -8,14 +8,14 @@ function AddToPlaylistBox({ setShowPlaylistMenu }) {
     <div className="grid overlay-box">
       <div className="flex add-playlist-box txt-sm">
         <li className="flex icon-box">
-          <span className="txt-sm"> Save to... </span>
+          <span className="txt-md"> Save to... </span>
           <AiFillCloseCircle
             className="icon close-icon "
             onClick={() => setShowPlaylistMenu(false)}
           />
         </li>
-        <div className="flex playlist-list">
-          <label>
+        <div className="flex txt-md playlist-list">
+          <label >
             <input type="checkbox" className="checkbox" />
             Watch Later
           </label>
@@ -27,7 +27,7 @@ function AddToPlaylistBox({ setShowPlaylistMenu }) {
         {!showPlayListForm && (
           <li onClick={()=>setShowPlayListForm(true)} className="flex icon-box pointer">
             <AiOutlinePlus className="icon size-xs" />
-            <span className="txt-sm">Create New Playlist</span>
+            <span className="txt-md">Create New Playlist</span>
           </li>
         )}
         {showPlayListForm && (
