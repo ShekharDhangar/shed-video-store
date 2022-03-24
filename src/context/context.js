@@ -1,2 +1,1 @@
-import { VideoProvider,useVideoContext } from "./videoContext";
-export {VideoProvider,useVideoContext}
+export { VideoProvider,useVideoContext } from "./videoContext";

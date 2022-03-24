@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import { HomePage } from "./pages/pages";
+import { HomePage, VideoListing } from "./pages/pages";
 
 function RoutesPath(){
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/explore" element={<VideoListing />} />
         </Routes>
     )
 }

@@ -44,5 +44,17 @@
         margin: 0;
         padding: 0 5px;
     }
+    .sidebar-icon-container .icon{
+        margin: 3px 0;
+        width:2.5rem;
+        height: 2.5rem;
+    }
+    .history-icon.icon{
+        width: 2.25rem;
+        height: 2.75rem;
+    }
+    .nav-icon-txt{
+        font-size: 1rem;
+    }
   
 }

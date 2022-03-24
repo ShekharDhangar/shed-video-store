@@ -1,2 +1,2 @@
-import { HomePage } from "./HomePage/HomePage";
-export {HomePage}
+export { HomePage } from "./HomePage/HomePage";
+export { VideoListing } from "./VideoListing/VideoListing";
