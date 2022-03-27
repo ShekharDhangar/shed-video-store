@@ -6,6 +6,7 @@ import {
 } from "../../icons/icons";
 import { useState } from "react";
 import { AddToPlaylistBox } from "../components";
+import { MenuBox } from "./MenuBox/MenuBox";
 
 function VideoCard({videoDetails}) {
   const [ShowMenu, setShowMenu] = useState(false);
@@ -28,16 +29,7 @@ function VideoCard({videoDetails}) {
           className="icon size-xs"
         />
         {ShowMenu && (
-          <div className="absolute inset-0 flex video-card-btns">
-            <button className="btn txt-sm plain-btn">
-              <ImClock /> Add to watch later
-            </button>
-            <button
-              onClick={() => {setShowPlaylistMenu(true); setShowMenu(false) }}
-              className="w-100 btn txt-sm plain-btn" >
-              <RiPlayListAddLine className="icon" /> Add to playlist{" "}
-            </button>
-          </div>
+         < MenuBox setStatePlaylistMenu={setShowPlaylistMenu} setStateMenu={setShowMenu} />
         )}
       </div>  
       {showPlaylistMenu && (< AddToPlaylistBox  setShowPlaylistMenu={setShowPlaylistMenu} />)}

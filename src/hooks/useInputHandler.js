@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-const useLocalStorageSetItem= (itemName,itemValue) => localStorage.setItem(itemName,itemValue);
-const useLocalStorageGetItem= (itemName)=>localStorage.getItem(itemName);
-
 
 const useInputHandler = (state) => {
   const [inputState, setInputState] = useState(state);
@@ -17,4 +14,5 @@ const useInputHandler = (state) => {
 };
 
 
-export {useLocalStorageSetItem,useLocalStorageGetItem,useInputHandler}
+
+export { useInputHandler,};

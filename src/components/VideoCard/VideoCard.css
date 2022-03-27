@@ -32,12 +32,6 @@
   text-overflow: ellipsis;
 }
 
-.video-card-btns {
-  flex-direction: column;
-  right: 2rem;
-  top: -2rem;
-  gap: 5px;
-}
 
 @media only screen and (max-width: 650px) {
   .video-card {

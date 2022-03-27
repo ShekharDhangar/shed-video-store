@@ -6,6 +6,7 @@ import "./HomePage.css";
 function HomePage() {
   const { videoStates } = useVideoContext();
   const { videos, videosLoading } = videoStates;
+  const alteredVideos = videos.slice(0,12);
 
   return (
     <>
@@ -24,7 +25,7 @@ function HomePage() {
             {videosLoading ? (
               <Loading width="150px" height="150px" />
             ) : (
-              videos.map((video) => <VideoCard key={video._id} videoDetails={video} />)
+              alteredVideos.map((video) => <VideoCard key={video._id} videoDetails={video} />)
             )}
           </div>
         </div>

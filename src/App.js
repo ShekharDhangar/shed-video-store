@@ -12,7 +12,7 @@ function App() {
         const response = await getVideos();
         if (response) {
           dispatch({
-            type: "LOAD VIDEOS",
+            type: "LOAD_VIDEOS",
             payload: response,
           });
         }
