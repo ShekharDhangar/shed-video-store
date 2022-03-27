@@ -28,7 +28,7 @@ function AuthLogin() {
     setPasswordShown((passwordShown) => !passwordShown);
   }
 
-  function signInAsGuest(e) {
+  function logInAsGuest(e) {
     e.preventDefault();
     guestLogin();
   }
@@ -46,7 +46,7 @@ function AuthLogin() {
       <Navbar isMenuRequired={false} searchBarRequired={false} />
       <div className="flex form-container">
         <form className="login-form">
-          <h2 className="form-title txt-center h2">Sign in</h2>
+          <h2 className="form-title txt-center h2">Log in</h2>
           <div className="input-with-icon">
             <FaUserAlt className="icon size-xs" />
             <input
@@ -103,10 +103,10 @@ function AuthLogin() {
             )}
           </div>
           <button onClick={userLogin} className="btn btn-md login-btn">
-            {submitState ? <Loading width="25px" height="25px" /> : `Sign in`}
+            {submitState ? <Loading width="25px" height="25px" /> : `Log In`}
           </button>
-          <button onClick={signInAsGuest} className="btn btn-sm m-1">
-            {Guest ? <Loading width="25px" height="25px" /> : `Sign As Guest`}
+          <button onClick={logInAsGuest} className="btn btn-sm m-1">
+            {Guest ? <Loading width="25px" height="25px" /> : `Log As Guest`}
           </button>
           <div className="signup-way">
             <span className="account-no">Don't have an Account?</span>
