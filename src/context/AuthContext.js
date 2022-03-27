@@ -64,6 +64,7 @@ function AuthProvider({ children }) {
   }
   function logOutUser() {
     localStorage.clear();
+    setUserState({ id: "" });
   }
 
 //   Will Add the below feature later.
