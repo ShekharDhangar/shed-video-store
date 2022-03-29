@@ -31,10 +31,10 @@ function Sidebar() {
   const navigate = useNavigate();
   return (
     <div className="flex sidebar-container">
-    {sidebarData.map(sidebarItem=>(
-    <div onClick={()=>navigate(sidebarItem.navLink)} key={sidebarItem.id} className="flex sidebar-icon-container">
-        {sidebarItem.navIcon}
-        <span className="lt-bold nav-icon-txt" >{sidebarItem.navTxt}</span>
+    {sidebarData.map((navLink,id,navIcon,navTxt)=>(
+    <div onClick={()=>navigate(navLink)} key={id} className="flex sidebar-icon-container">
+        {navIcon}
+        <span className="lt-bold nav-icon-txt" >{navTxt}</span>
       </div>))}
     </div>
   );

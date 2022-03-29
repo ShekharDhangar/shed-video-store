@@ -49,7 +49,7 @@ function AuthSignUp() {
 
   function submitFormHandler(e) {
     e.preventDefault();
-      signUpUser(inputState.firstName,inputState.lastName,inputState.email,inputState.password,setformSubmitState);;
+      signUpUser(inputState,setformSubmitState);;
   }
   return (
     <>
@@ -61,26 +61,7 @@ function AuthSignUp() {
           className="signup-form"
         >
           <h2 className="form-title txt-center h2 ">Create Account</h2>
-          <div className="flex-container social-login">
-            <a href="#">
-              <img
-                className="icon size-xs"
-                src="https://img.icons8.com/color/48/000000/google-logo.png"
-              />
-            </a>
-            <a href="#">
-              <img
-                className="icon size-xs"
-                src="https://img.icons8.com/ios-glyphs/30/000000/github.png"
-              />
-            </a>
-            <a href="#">
-              <img
-                className="icon size-xs"
-                src="https://img.icons8.com/color/48/000000/twitter--v1.png"
-              />
-            </a>
-          </div>
+        
           <p className="or">
             <span>or</span>
           </p>
