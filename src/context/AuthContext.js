@@ -46,14 +46,14 @@ function AuthProvider({ children }) {
     }
   };
 
-  async function signUpUser(firstName, lastName, email, password, setState) {
+  async function signUpUser(inputState, setState) {
     try {
       setState(true);
       const response = await axios.post("/api/auth/signup", {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
+        firstName: inputState.firstName,
+        lastName: inputState.lastName,
+        email: inputState.email,
+        password: inputState.password,
       });
       const encodedToken = response.data.encodedToken;
 

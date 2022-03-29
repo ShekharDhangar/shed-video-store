@@ -20,6 +20,7 @@ export function SingleVideoPage() {
   const videoCategory = foundVideo?.category;
   const categorisedVideos = getCategorisedData(videos,videoCategory);
   const alteredVideos = categorisedVideos.slice(0,4);
+  
   const shuffledArr = getShuffleArr(alteredVideos);
   return (
     <>
