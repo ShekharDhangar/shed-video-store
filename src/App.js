@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import "./App.css";
 import { RoutesPath } from "./Routes";
-import { getVideos,getCategories } from "./serverCalls/initialCalls";
-import {useVideoContext} from "./context/videoContext";
+import { getVideos, getCategories } from "./serverCalls/initialCalls";
+import { useVideoContext } from "./context/videoContext";
 
 function App() {
-  const {dispatch} = useVideoContext();
+  const { dispatch } = useVideoContext();
   useEffect(() => {
     (async () => {
       try {
@@ -17,14 +17,14 @@ function App() {
           });
         }
         const categoryResponse = await getCategories();
-        if(categoryResponse){
+        if (categoryResponse) {
           dispatch({
-            type:"SET_CATEGORIES",
-            payload:categoryResponse,
-          })
+            type: "SET_CATEGORIES",
+            payload: categoryResponse,
+          });
         }
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     })();
   }, []);

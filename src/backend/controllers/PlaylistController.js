@@ -12,7 +12,7 @@ import { v4 as uuid } from "uuid";
  * This handler handles getting all user's playlists.
  * send GET Request at /api/user/playlist
  * */
-export const getAllPlaylistsHandler = function (schema, request) {
+export const getAllPlaylistsHandler = function (schema, request) {  
   const user = requiresAuth.call(this, request);
   try {
     if (!user) {

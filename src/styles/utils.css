@@ -6,6 +6,7 @@
     --overlay-clr: rgba(0, 0, 0, 0.75);
     color: white;
     --border-clr:#4b4c53;
+    -webkit-tap-highlight-color: transparent;
     font-family: 'Poppins', sans-serif;
   }
   ::-webkit-scrollbar {
