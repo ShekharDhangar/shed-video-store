@@ -14,6 +14,7 @@
     transform: scale(1);
 }
 
+
 @media only screen and (max-width:32.5em){
     .display-img-container{
         height: max-content;
