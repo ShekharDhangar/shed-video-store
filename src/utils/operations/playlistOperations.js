@@ -53,7 +53,3 @@ export async function removePlaylistCall(playlistId,encodedToken,dispatch){
     console.log(error)
   }
 }
-
-export const isPresentInState=(state,data)=>{
-  return state?.some(arr=>arr._id===data._id);
-}

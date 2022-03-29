@@ -1,1 +1,1 @@
-export {addPlaylistHandler,addVideoToPlaylistCall,removeVideoFromPlaylistCall,isPresentInState,removePlaylistCall} from "./operations/playlistOperations"
+export {addPlaylistHandler,addVideoToPlaylistCall,removeVideoFromPlaylistCall,removePlaylistCall} from "./operations/playlistOperations"

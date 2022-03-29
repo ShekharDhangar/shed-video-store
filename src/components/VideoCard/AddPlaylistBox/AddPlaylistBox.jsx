@@ -6,9 +6,9 @@ import {
   addPlaylistHandler,
   addVideoToPlaylistCall,
   removeVideoFromPlaylistCall,
-  isPresentInState,
 } from "../../../utils/utils";
 import { useInputHandler } from "../../../hooks/customHooks";
+import { isPresentInState } from "../../../utils/utilCalls";
 
 function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
   const navigate = useNavigate();

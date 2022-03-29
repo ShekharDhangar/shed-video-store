@@ -5,6 +5,10 @@ export const getCategorisedData = (videos, category) => {
   return videos.filter((video) => video.category === category);
 };
 
+export const isPresentInState=(state,data)=>{
+    return state?.some(arr=>arr._id===data._id);
+  }
+  
 export const getShuffleArr = ([...arr]) => {
   var currentIndex = arr.length,
     tempValue,
