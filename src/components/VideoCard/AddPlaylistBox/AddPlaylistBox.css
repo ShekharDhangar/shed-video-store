@@ -9,7 +9,7 @@
   padding: 1rem;
   border-radius: 5px;
 }
-.add-playlist-box .close-icon {
+.add-playlist-box .icon-close {
   width: 2.5rem;
   height: 2.5rem;
 }
@@ -47,7 +47,7 @@
 .playlist-input{
     margin: 5px 0;
     border-bottom: 1px solid var(--border-clr);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     background-color: var(--theme-clr);
     width: 100%;
     color: var(--clr-white);

@@ -8,3 +8,28 @@
   box-sizing: border-box;
   font-size: 10px;
 }
+.card-grid{
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.main-wrapper{
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-left: 9rem;
+}
+@media only screen and (max-width:43.75em){
+  .main-wrapper{
+      margin-left: 1rem;
+  }
+
+  .card-grid{
+      padding: 1em ;
+  }
+}
+@media only screen and (max-width:22.5em){
+  .card-grid{
+      padding: 0 1.5em;
+  }
+}

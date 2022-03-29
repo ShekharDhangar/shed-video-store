@@ -1,22 +1,34 @@
 import "./Navbar.css";
 import "./Navbar-Media.css";
-import { AiFillCloseCircle, BiSearch } from "../../icons/icons";
-import { logoImg } from "../../assets/images.js";
+import { AiFillCloseCircle, BiSearch, FaUserAlt } from "../../icons/icons";
 import { useState } from "react";
-const Navbar = () => {
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../context/context";
+const Navbar = ({ searchBarRequired = true }) => {
   const [showSearchModal, setShowSearchModal] = useState(false);
+  const navigate = useNavigate();
+  const [DropDown, setDropDown] = useState(false);
+  const { userState, logOutUser } = useAuthContext();
   return (
     <>
       <section className="flex nav-section">
         <div className="flex h-100 logo-container">
-          <span className="logo">SHED</span>
+          <span onClick={() => navigate("/")} className="logo">
+            SHED
+          </span>
         </div>
-        <div className="flex search-container ">
-          <input className="search-input" type="text" placeholder="Search..." />
-          <div className="search-icon-container">
-            <BiSearch className="search-btn" />
+        {searchBarRequired && (
+          <div className="flex search-container ">
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Search..."
+            />
+            <div className="search-icon-container">
+              <BiSearch className="search-btn" />
+            </div>
           </div>
-        </div>
+        )}
         {showSearchModal && (
           <div className="search-bar-modal">
             <div className="search-bar">
@@ -35,15 +47,45 @@ const Navbar = () => {
           </div>
         )}
 
-        <div className="flex search-wrapper">
-          <BiSearch
-            onClick={() => setShowSearchModal(true)}
-            className="mobile-search-btn icon size-xs"
-          />
-          <div className="avatar-container size-sm txt-avatar flex">
-            <span>SD</span>
+        {searchBarRequired && (
+          <div className="flex search-wrapper">
+            <BiSearch
+              onClick={() => setShowSearchModal(true)}
+              className="mobile-search-btn icon size-xs"
+            />
+            <div
+              onClick={() => setDropDown((prev) => !prev)}
+              className="flex pointer user-icon-box relative icon-container"
+            >
+              <FaUserAlt className="user-icon icon size-xs" />
+              {DropDown && (
+                <div className="absoloute inset-0 profile-box">
+                  {userState.id && (
+                    <Link to="/login">
+                      <button
+                        onClick={() => {
+                          logOutUser();
+                          navigate("/");
+                        }}
+                        className="w-100 btn btn-xs"
+                      >
+                        LogOut
+                      </button>
+                    </Link>
+                  )}
+                  {!userState.id && (
+                    <button
+                      onClick={() => navigate("/login")}
+                      className="w-100 btn btn-xs"
+                    >
+                      Login/SignUp
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </section>
     </>
   );

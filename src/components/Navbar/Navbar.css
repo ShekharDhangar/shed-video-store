@@ -6,8 +6,27 @@
   gap: 1rem;
   padding-inline: 0;
 }
+
+.user-icon-box{
+  margin-right: 5rem;
+}
+.profile-box {
+  position: absolute;
+  top: 4.5rem;
+  width: 15rem;
+  max-width: 15rem;
+}
+.profile-box .btn {
+  margin: 2px 0;
+  cursor: pointer;
+  background-color: var(--theme-clr);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-white);
+  font-size: 1.75rem;
+}
 .logo {
   justify-self: flex-start;
+  cursor: pointer;
   font-family: "Permanent Marker", cursive;
   font-size: 5rem;
   color: var(--primary-clr);
@@ -33,7 +52,7 @@
 .nav-section {
   background-color: var(--theme-clr);
   justify-content: space-between;
-  padding-inline: 2.5rem;
+  padding-inline: 4rem;
 }
 /*  Mobile Search Bar  */
 .search-bar-modal {
@@ -56,6 +75,7 @@
   padding: 2rem 3rem;
   transform: translateY(-100%);
 }
+
 
 .search-bar {
   transform: translateY(0);
@@ -98,4 +118,9 @@
 }
 .mobile-search-btn {
   display: none;
+}
+
+.icon.size-xs{
+  width: 2.5rem;
+  height: 2.5rem;
 }

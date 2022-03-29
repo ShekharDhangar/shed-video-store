@@ -8,7 +8,7 @@ export const videos = [
     _id: uuid(),
     title: "the office (US)",
     creator: "Michael Scott",
-    gif:"https://media.giphy.com/media/P0ZRTYaCmPsJPNd3r0/giphy.gif"
+    gif:"https://i.giphy.com/media/y41Txh2pbwqLNNubOo/200.webp"
   },
   {
     _id: uuid(),
