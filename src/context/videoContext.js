@@ -3,7 +3,7 @@ import { videoReducer } from "../reducer/videoReducer";
 const VideoContext = createContext();
 function VideoProvider({ children }) {
     const [ videoStates, dispatch] = useReducer(videoReducer,
-        { videos: [], watchLater: [], playlists:[], history: [],videosLoading:true})
+        { videos: [],categories:[],playlists:[], history: [],videosLoading:true})
 
 
     return (

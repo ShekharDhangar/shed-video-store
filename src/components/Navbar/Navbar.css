@@ -1,19 +1,13 @@
 @import url(../../styles/utils.css);
-.logoImg {
-  width: 12.5rem;
-}
 .logo-container {
   gap: 1rem;
   padding-inline: 0;
-}
-
-.user-icon-box{
-  margin-right: 5rem;
 }
 .profile-box {
   position: absolute;
   top: 4.5rem;
   width: 15rem;
+  left: -4rem;
   max-width: 15rem;
 }
 .profile-box .btn {

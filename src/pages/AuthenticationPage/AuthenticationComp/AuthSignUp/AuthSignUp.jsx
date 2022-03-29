@@ -37,8 +37,6 @@ function AuthSignUp() {
       return false;
     }
     if (!passwordExpression.test(inputState.password) || !inputState.password2.match(passwordExpression)){
-      console.log(!passwordExpression.test(inputState.password),'1');
-      console.log((inputState.password2.match(passwordExpression)),"2");
       console.log("password should follow rules");
       return false
     }

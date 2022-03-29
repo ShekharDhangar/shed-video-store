@@ -1,23 +1,36 @@
-import { Navbar ,Sidebar, VideoCard} from "../../components/components";
+import {  emptyImage2 } from "../../assets/images";
+import {
+  Navbar,
+  Sidebar,
+  PlaylistPageCard,
+} from "../../components/components";
 import { useVideoContext } from "../../context/videoContext";
-import { useState } from "react";
-export function Playlist(){
-    const { videoStates } = useVideoContext();
-    const { videos,watchLater, videosLoading } = videoStates;
-    const [playlists,setPlaylists]=useState([]);
-    
-    return  (
+import { Link } from "react-router-dom";
+export function Playlist() {
+  const { videoStates } = useVideoContext();
+  const { playlists  } = videoStates;
+  return (
     <>
-    <Navbar/>
-    <main className="flex main-wrapper">
-        <Sidebar/>
+    <Navbar />
+  <main className="main-wrapper">
+    <Sidebar />
+    <div className="content-wrapper" >
+      {playlists.length===0 && (
+        <div className="flex empty-page-box" >
+        <h1 className="empty-page-title" >YOU HAVE 0 PLAYLISTS !</h1>
+        <img className="flex empty-page-image" src={emptyImage2} alt="empty playlist" />
+        <Link to="/explore">
+        <button className="btn btn-sm ">View Videos</button>
+        </Link>
+      </div>
+      ) }
         <section className="flex card-grid">
-        {videosLoading ? (
-          <Loading width="150px" height="150px" />
-        ) : (
-            watchLater?.map(video => <VideoCard key={video._id} videoDetails={video} />)
-        )}
+          {playlists?.map((playlistItem) =>
+          <PlaylistPageCard key={playlistItem._id}  card={playlistItem} />
+          )}
         </section>
-        </main>
-    </>)
+        </div>
+      </main>
+    </> 
+  );
 }

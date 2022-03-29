@@ -1,23 +1,30 @@
 .video-card {
   min-width: 25rem;
-  width: 30rem;
   max-width: 38rem;
-  flex-grow: 1;
-  margin: 1rem 0;
+  flex-grow: 2;
+  flex-shrink: 2;
+  width: 30rem;
+  margin: 1rem;
   flex-shrink: 1;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-clr);
+  cursor: pointer;
 }
 
 .video-img-container img {
   max-inline-size: 100%;
   border-radius: 5px;
+  
 }
 .video-details {
   justify-content: flex-start;
+  margin: 1rem;
 }
 .video-desc-box {
   flex-direction: column;
   width: 100%;
   gap: 5px;
+  margin-bottom: 7.5px;
   padding-left: 5px;
   max-height: 6rem;
 }
@@ -45,3 +52,8 @@
   }
 }
 
+@media only screen and (max-width:43.75em){
+  .video-card{
+    min-width: 30rem;
+  }
+}

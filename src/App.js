@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import { RoutesPath } from "./Routes";
-import { getVideos } from "./serverCalls/getVideos";
+import { getVideos,getCategories } from "./serverCalls/initialCalls";
 import {useVideoContext} from "./context/videoContext";
 
 function App() {
@@ -9,12 +9,19 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await getVideos();
-        if (response) {
+        const videoResponse = await getVideos();
+        if (videoResponse) {
           dispatch({
             type: "LOAD_VIDEOS",
-            payload: response,
+            payload: videoResponse,
           });
+        }
+        const categoryResponse = await getCategories();
+        if(categoryResponse){
+          dispatch({
+            type:"SET_CATEGORIES",
+            payload:categoryResponse,
+          })
         }
       } catch (error) {
         console.error(error);

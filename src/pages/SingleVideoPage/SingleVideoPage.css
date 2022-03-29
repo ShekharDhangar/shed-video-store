@@ -1,0 +1,45 @@
+.btn-grp {
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-inline: 1rem;
+}
+.btn-grp .plain-btn {
+  border: none;
+  height: min-content;
+  display: flex;
+}
+
+.video-content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  padding-left: 1rem;
+}
+
+.creator-txt {
+  margin-right: auto;
+}
+.video-box {
+  flex-basis: 60%;
+  flex-grow: 4;
+}
+
+.feature-videos {
+  flex-basis: 20%;
+}
+
+@media only screen and (max-width: 930px) {
+  .video-content-wrapper {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .btn-grp .plain-btn {
+    flex-direction: column;
+  }
+
+  .btn-grp {
+    justify-content: center;
+    gap: 2rem;
+  }
+}

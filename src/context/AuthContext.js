@@ -2,10 +2,14 @@ import { createContext, useContext, useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import {
+  useLocalStorageGetItem,
   useLocalStorageSetItem,
 } from "../hooks/customHooks";
+import { getAllPlaylistCall } from "../utils/operations/playlistOperations";
+import { useVideoContext } from "./videoContext";
 const AuthContext = createContext();
 function AuthProvider({ children }) {
+  const {dispatch}= useVideoContext();
   const [userState, setUserState] = useState({ id: "" });
   async function logInUser(email, password, setState) {
     try {
@@ -67,22 +71,17 @@ function AuthProvider({ children }) {
     setUserState({ id: "" });
   }
 
-//   Will Add the below feature later.
-//   useEffect(() => {
-//     (async () => {
-//       try {
-//         if (userToken) {
-//           const response = await axios.post("/api/auth/verify", {
-//             encodedToken: userToken,
-//           });
-//           const encodedToken = response.data.encodedToken;
-//           if (response) {
-//             setUserState({ ...userState, id: userToken });
-//           }
-//         }
-//       } catch (error) {}
-//     })();
-//   }, []);
+  const userToken = useLocalStorageGetItem("user-token");
+  useEffect(() => {
+    (async () => {
+      try {
+        if (userToken) {        
+            setUserState({ ...userState, id: userToken });
+          getAllPlaylistCall(userToken,dispatch);
+        }
+      } catch (error) {}
+    })();
+  }, []);
 
   return (
     <AuthContext.Provider

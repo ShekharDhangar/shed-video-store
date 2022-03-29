@@ -1,20 +1,20 @@
 import "./VideoCard.css";
 import {
   BsThreeDotsVertical,
-  RiPlayListAddLine,
-  ImClock,
 } from "../../icons/icons";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { AddToPlaylistBox } from "../components";
 import { MenuBox } from "./MenuBox/MenuBox";
 
-function VideoCard({videoDetails}) {
+function VideoCard({videoDetails,MenuBoxItem=MenuBox,MenuBtn}) {
   const [ShowMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate()
   const [showPlaylistMenu, setShowPlaylistMenu] = useState(false);
   return (
     <div className="video-card">
       <div className="w-100 h-100 video-img-container">
-        <img src={videoDetails.gif} alt="video Image" />
+        <img onClick={()=>navigate(`/${videoDetails._id}`)} src={videoDetails.img} className="res" alt="video Image" />
       </div>
       <div className="relative flex video-details">
         <div className="avatar-container size-sm txt-avatar flex">
@@ -24,15 +24,18 @@ function VideoCard({videoDetails}) {
           <p className="video-title">{videoDetails.title}</p>
           <p className="creator-name">~{videoDetails.creator}</p>
         </div>
-        <BsThreeDotsVertical
+        {!MenuBtn && (
+          <BsThreeDotsVertical
           onClick={() => setShowMenu(prev => !prev)}
           className="icon size-xs"
-        />
+          />
+          )}
+          {MenuBtn && <MenuBtn videoId={videoDetails._id}/>}
         {ShowMenu && (
-         < MenuBox setStatePlaylistMenu={setShowPlaylistMenu} setStateMenu={setShowMenu} />
+         < MenuBoxItem videoId={videoDetails._id} setStatePlaylistMenu={setShowPlaylistMenu} setStateMenu={setShowMenu} />
         )}
       </div>  
-      {showPlaylistMenu && (< AddToPlaylistBox  setShowPlaylistMenu={setShowPlaylistMenu} />)}
+      {showPlaylistMenu && (< AddToPlaylistBox video={videoDetails} setShowPlaylistMenu={setShowPlaylistMenu} />)}
     </div>
   );
 }
