@@ -10,7 +10,7 @@ import {
 import {useClickOutside,useInputHandler } from "../../../hooks/customHooks";
 import { isPresentInState } from "../../../utils/utilCalls";
 
-function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
+function AddToPlaylistBox({ setShowPlaylistMenu, video=""}) {
   const navigate = useNavigate();
   const { userState } = useAuthContext();
   const { videoStates, dispatch } = useVideoContext();
@@ -29,14 +29,18 @@ function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
     }
   };
   const checkBoxHandler = (e, playlistItem) => {
-    e.target.checked
+    if(video){
+      e.target.checked
       ? addVideoToPlaylistCall(playlistItem?._id, video, userState.id, dispatch)
       : removeVideoFromPlaylistCall(
-          playlistItem?._id,
-          video._id,
-          userState?.id,
-          dispatch
+        playlistItem?._id,
+        video._id,
+        userState?.id,
+        dispatch
         );
+      }else{
+        console.log('no videos selected to add');
+      }
   };
  
   
@@ -66,6 +70,7 @@ function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
                   checked={isPresentInState(playlistItem.videos, video)}
                   className="checkbox"
                 />
+
                 {playlistItem.title}
               </label>
             ))}

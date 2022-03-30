@@ -1,36 +1,45 @@
 import { emptyImage2 } from "../../assets/images";
-import { HistoryMenuBtn, Navbar, Sidebar, VideoCard } from "../../components/components";
+import {
+  LikeMenuBtn,
+  Navbar,
+  Sidebar,
+  VideoCard,
+} from "../../components/components";
 import { Link } from "react-router-dom";
 import { useVideoContext } from "../../context/context";
-import "./History.css";
+import "./Likes.css";
 import { useScrollToTop } from "../../hooks/customHooks";
 
-export function History() {
+export function Likes() {
   const { videoStates } = useVideoContext();
   const { videos } = videoStates;
-  const history = videos.filter((video) => video.isInHistory);
+  const likeVideos = videos.filter((video) => video.isLiked);
   useScrollToTop();
 
   return (
     <>
       <Navbar />
       <div className="top"></div>
-      <main className="flex main-wrapper">
+      <main className="main-wrapper">
         <Sidebar />
         <section className="content-wrapper">
-          <div className="flex card-grid history-videos">
-            {history?.map((video) => (
-              <VideoCard key={video._id} videoDetails={video} MenuBtn={HistoryMenuBtn} />
+          <div className="flex card-grid">
+            {likeVideos?.map((video) => (
+              <VideoCard
+                key={video._id}
+                videoDetails={video}
+                MenuBtn={LikeMenuBtn}
+              />
             ))}
-            {history.length === 0 && (
+            {likeVideos.length === 0 && (
               <div className="flex empty-page-box">
                 <h1 className="empty-page-title">
-                  History Is Currently Empty !
+                  Like Videos Is Currently Empty !
                 </h1>
                 <img
                   className="flex empty-page-image"
                   src={emptyImage2}
-                  alt="empty history"
+                  alt="empty Like Videos"
                 />
                 <Link to="/explore">
                   <button className="btn btn-sm ">View Videos</button>

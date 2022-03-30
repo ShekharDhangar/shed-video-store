@@ -11,18 +11,36 @@ function videoReducer(state, { type, payload }) {
             ...video,
             isInHistory: false,
             isInWatchLater: false,
-            isInLiked: false,
+            isLiked: false,
           })),
         ],
         videosLoading: false,
       };
     }
-    case "SAVE_TO_WATCHLATER": {
-      return { ...state, watchLater: payload };
-    }
+
     case "SET_PLAYLISTS": {
       return { ...state, playlists: payload };
     }
+    
+    case "SET_HISTORY":{
+      return {
+        ...state,
+        videos:state.videos.map(video=>({...video,isInHistory:payload.some(item=>item._id===video._id)}))
+      }
+    }
+    case "SET_WATCHLATER":{
+      return {
+        ...state,
+        videos:state.videos.map(video=>({...video,isInWatchLater:payload.some(item=>item._id===video._id)}))
+      }
+    }
+    case "SET_LIKES":{
+      return {
+        ...state,
+        videos:state.videos.map(video=>({...video,isLiked:payload.some(item=>item._id===video._id)}))
+      }
+    }
+
     case "ACTION_PLAYLIST": {
       return {
         ...state,
@@ -31,6 +49,7 @@ function videoReducer(state, { type, payload }) {
         ),
       };
     }
+
     default:
       return state;
   }

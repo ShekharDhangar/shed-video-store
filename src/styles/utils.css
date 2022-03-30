@@ -60,5 +60,10 @@
   .plain-btn:hover {
     background-color: var(--theme-clr);
   }
-  
-  
+  .menu-icon-box > .icon.size-xs{
+    width: 2rem;
+    height: 2rem;
+  }
+ .top{
+   margin-top: 8rem;
+ }

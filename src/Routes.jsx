@@ -6,6 +6,7 @@ import {
   AuthSignUp,
   History,
   HomePage,
+  Likes,
   Playlist,
   VideoListing,
   WatchLater,
@@ -26,6 +27,7 @@ function RoutesPath() {
       </Route>
 
       <Route element={<RequireAuth />}>
+      <Route path="/liked-videos" element={<Likes />} />
         <Route path="/playlist/:playlistId" element={<PlayListVideoList />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/history" element={<History />} /> 

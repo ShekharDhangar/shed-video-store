@@ -3,6 +3,16 @@ import { useState ,useRef,useEffect} from "react";
 const useLocalStorageSetItem= (itemName,itemValue) => localStorage.setItem(itemName,itemValue);
 const useLocalStorageGetItem= (itemName)=>localStorage.getItem(itemName);
 
+const useScrollToTop = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  },[]);
+};
+
+
 const useClickOutside=(handler)=>{
   const elementRef = useRef();
   useEffect(() => {
@@ -33,4 +43,4 @@ const useInputHandler = state => {
 };
 
 
-export {useLocalStorageSetItem,useLocalStorageGetItem,useClickOutside,useInputHandler}
+export {useLocalStorageSetItem,useLocalStorageGetItem,useScrollToTop,useClickOutside,useInputHandler}
