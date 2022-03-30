@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useState ,useRef,useEffect} from "react";
 
 const useLocalStorageSetItem= (itemName,itemValue) => localStorage.setItem(itemName,itemValue);
 const useLocalStorageGetItem= (itemName)=>localStorage.getItem(itemName);
 
+const useClickOutside=(handler)=>{
+  const elementRef = useRef();
+  useEffect(() => {
+    const mouseHandler = (e) => {
+      if (elementRef.current===e.target) {
+        handler()
+      }
+    };
+    document.addEventListener("click", mouseHandler);
 
-const useInputHandler = (state) => {
+    return () => {
+      document.removeEventListener("click",mouseHandler);
+    };
+  },[elementRef]);
+  return elementRef;
+}
+
+const useInputHandler = state => {
   const [inputState, setInputState] = useState(state);
   const inputUpdate = (e) => {
     const inpValue = e.target.value;
@@ -13,8 +29,8 @@ const useInputHandler = (state) => {
       [e.target.name]: inpValue,
     });
   };
-  return { inputState, inputUpdate };
+  return { inputState, inputUpdate ,setInputState };
 };
 
 
-export {useLocalStorageSetItem,useLocalStorageGetItem,useInputHandler}
+export {useLocalStorageSetItem,useLocalStorageGetItem,useClickOutside,useInputHandler}

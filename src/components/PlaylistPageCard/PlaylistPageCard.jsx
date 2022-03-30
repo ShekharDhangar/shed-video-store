@@ -3,8 +3,7 @@ import { useNavigate} from "react-router-dom";
 import { emptyImage1 } from "../../assets/images";
 import { removePlaylistCall } from "../../utils/utils";;
 import { RiPlayListAddLine,FaTrash } from "../../icons/icons";
-import { useAuthContext } from "../../context/AuthContext";
-import { useVideoContext } from "../../context/videoContext";
+import {useAuthContext, useVideoContext } from "../../context/context";
 export function PlaylistPageCard({ card }) {
   const {userState}= useAuthContext();
   const {dispatch}=useVideoContext();

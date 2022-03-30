@@ -11,7 +11,7 @@ import { ForgotPassword } from "../ForgotPassword/ForgotPassword";
 import { useState } from "react";
 import {  Loading, Navbar } from "../../../../components/components";
 import { useInputHandler } from "../../../../hooks/customHooks";
-import { useAuthContext } from "../../../../context/AuthContext";
+import { useAuthContext } from "../../../../context/context";
 function AuthLogin() {
   const navigate = useNavigate();
   const {logInUser,guestLogin}= useAuthContext();

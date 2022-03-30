@@ -4,7 +4,7 @@ import {
   VideoCard,
   Loading,
 } from "../../components/components";
-import { useVideoContext } from "../../context/videoContext";
+import { useVideoContext } from "../../context/context";
 import { useState } from "react";
 import { getCategorisedData, getShuffleArr } from "../../utils/utilCalls";
 

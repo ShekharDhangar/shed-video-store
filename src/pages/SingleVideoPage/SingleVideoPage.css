@@ -4,6 +4,7 @@
   margin-top: 1rem;
   padding-inline: 1rem;
 }
+
 .btn-grp .plain-btn {
   border: none;
   height: min-content;
@@ -27,7 +28,7 @@
 }
 
 .feature-videos {
-    margin-left: 1rem;
+  margin-left: 1rem;
   flex-basis: 30%;
 }
 
@@ -35,8 +36,9 @@
   .video-content-wrapper {
     flex-direction: column;
   }
-  .feature-videos{
-      margin-left: 0;
+  .feature-videos {
+    margin-left: 0;
+    margin-inline: 1rem;
   }
 }
 @media only screen and (max-width: 600px) {

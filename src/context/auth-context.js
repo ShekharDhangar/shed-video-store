@@ -6,7 +6,7 @@ import {
   useLocalStorageSetItem,
 } from "../hooks/customHooks";
 import { getAllPlaylistCall } from "../utils/operations/playlistOperations";
-import { useVideoContext } from "./videoContext";
+import { useVideoContext } from "./video-context";
 const AuthContext = createContext();
 function AuthProvider({ children }) {
   const {dispatch}= useVideoContext();

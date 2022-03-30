@@ -1,7 +1,6 @@
-import { heroImg } from "../../assets/images";
 import {  Navbar, Sidebar, VideoCard } from "../../components/components";
 import { Loading } from "../../components/Loading/Loading";
-import { useVideoContext } from "../../context/videoContext";
+import { useVideoContext } from "../../context/context";
 import "./HomePage.css";
 import  { useState } from 'react';
 import { getCategorisedData, getShuffleArr } from "../../utils/utilCalls";

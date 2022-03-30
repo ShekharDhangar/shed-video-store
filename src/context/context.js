@@ -1,2 +1,2 @@
-export { VideoProvider,useVideoContext } from "./videoContext";
-export { AuthProvider, useAuthContext } from "./AuthContext";
+export { VideoProvider,useVideoContext } from "./video-context";
+export { AuthProvider, useAuthContext } from "./auth-context";

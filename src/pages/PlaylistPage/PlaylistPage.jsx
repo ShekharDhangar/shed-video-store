@@ -4,7 +4,7 @@ import {
   Sidebar,
   PlaylistPageCard,
 } from "../../components/components";
-import { useVideoContext } from "../../context/videoContext";
+import { useVideoContext } from "../../context/context";
 import { Link } from "react-router-dom";
 export function Playlist() {
   const { videoStates } = useVideoContext();

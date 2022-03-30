@@ -1,11 +1,11 @@
 import "./SingleVideoPlayer.css";
 import ReactPlayer from "react-player/youtube";
-import { useVideoContext } from "../../context/videoContext";
+import { useVideoContext } from "../../context/context";
 export function SingleVideoPlayer({ videoId }) {
     const {videoStates}=useVideoContext();
   const {videos}=videoStates;
     const foundVideo = videos?.find(video=>video._id===videoId);
-    
+
   return (
     <div className="player-wrapper">
       <ReactPlayer

@@ -10,7 +10,7 @@ import {
 } from "../../../../icons/icons";
 import { Loading, Navbar } from "../../../../components/components";
 import { useInputHandler } from "../../../../hooks/customHooks";
-import { useAuthContext } from "../../../../context/AuthContext";
+import { useAuthContext } from "../../../../context/context";
 
 function AuthSignUp() {
   const [passwordShown, setPasswordShown] = useState(false);

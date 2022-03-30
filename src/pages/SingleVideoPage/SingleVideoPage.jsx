@@ -9,19 +9,20 @@ import {
   AddToPlaylistBox,
   VideoCard,
 } from "../../components/components";
-import { useVideoContext } from "../../context/videoContext";
-import { getCategorisedData, getShuffleArr } from "../../utils/utilCalls";
+import { useVideoContext } from "../../context/context";
+import { getCategorisedData, getShuffleArr ,findById} from "../../utils/utilCalls";
 export function SingleVideoPage() {
   const { videoId } = useParams();
   const {videoStates}=useVideoContext();
   const {videos}=videoStates;
-  const foundVideo = videos?.find(video=>video._id===videoId);
+  const foundVideo = findById(videos,videoId);
   const [showPlaylistForm,setPlaylistForm]=useState(false)
   const videoCategory = foundVideo?.category;
   const categorisedVideos = getCategorisedData(videos,videoCategory);
-  const alteredVideos = categorisedVideos.slice(0,4);
+  const filteredVideos = categorisedVideos.filter(item=>item._id !== foundVideo._id);
+  const shuffledArr = getShuffleArr(filteredVideos);
+  const alteredVideos = shuffledArr.slice(0,4);
   
-  const shuffledArr = getShuffleArr(alteredVideos);
   return (
     <>
       <Navbar />
@@ -51,7 +52,7 @@ export function SingleVideoPage() {
             </div>
           </div>
           <div className="flex card-grid feature-videos">
-            {shuffledArr.map(item=><VideoCard videoDetails={item} key={item._id} />)}
+            {alteredVideos.map(item=><VideoCard videoDetails={item} key={item._id} />)}
           </div>
         </section>
       </main>

@@ -1,13 +1,13 @@
 import "./AddPlaylistBox.css";
 import { AiOutlineCloseCircle } from "../../../icons/icons";
 import { useVideoContext, useAuthContext } from "../../../context/context";
-import {useNavigate} from "react-router-dom" ; 
+import { useNavigate } from "react-router-dom";
 import {
   addPlaylistHandler,
   addVideoToPlaylistCall,
   removeVideoFromPlaylistCall,
 } from "../../../utils/utils";
-import { useInputHandler } from "../../../hooks/customHooks";
+import {useClickOutside,useInputHandler } from "../../../hooks/customHooks";
 import { isPresentInState } from "../../../utils/utilCalls";
 
 function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
@@ -15,20 +15,17 @@ function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
   const { userState } = useAuthContext();
   const { videoStates, dispatch } = useVideoContext();
   const { playlists } = videoStates;
-  const { inputState, inputUpdate } = useInputHandler({
+  const { inputState, inputUpdate, setInputState } = useInputHandler({
     title: "",
     description: "",
   });
 
   const newPlaylistHandler = (e) => {
     e.preventDefault();
-    if (userState.id) {
-      if (playlists.some((item) => item.title === inputState.title)) {
-      } else {
-        addPlaylistHandler(inputState, userState?.id, dispatch);
-      }
-    } else {
-      console.log("please login");
+
+    if (!playlists.some((item) => item.title === inputState.title)) {
+      addPlaylistHandler(inputState, userState?.id, dispatch);
+      setInputState({ title: "" });
     }
   };
   const checkBoxHandler = (e, playlistItem) => {
@@ -41,8 +38,13 @@ function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
           dispatch
         );
   };
-  return (
-    <div className="grid overlay-box">
+ 
+  
+ const elementRef = useClickOutside(()=>setShowPlaylistMenu(false))
+  
+
+  return (  
+    <div ref={elementRef} className="grid overlay-box">
       <div className="flex add-playlist-box txt-sm">
         <li className="flex icon-box">
           <span className="txt-md"> Save to... </span>
@@ -71,18 +73,21 @@ function AddToPlaylistBox({ setShowPlaylistMenu, video }) {
           <input
             type="text"
             name="title"
+            value={inputState.title}
             onChange={inputUpdate}
             className="playlist-input"
             required
             placeholder="Enter Playlist Name"
           />
-          {userState.id?(
+          {userState.id ? (
             <button type="submit" className="btn btn-sm">
-            Create
-          </button>
-            ):(<button onClick={()=>navigate("/login")} className="btn btn-sm">
-            Create
-          </button>)}
+              Create
+            </button>
+          ) : (
+            <button onClick={() => navigate("/login")} className="btn btn-sm">
+              Create
+            </button>
+          )}
         </form>
       </div>
     </div>

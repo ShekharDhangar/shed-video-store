@@ -4,8 +4,7 @@ import "./styles/index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom"
-import { VideoProvider } from "./context/videoContext";
-import { AuthProvider } from "./context/AuthContext";
+import {AuthProvider, VideoProvider } from "./context/context";
 
 // Call make Server
 makeServer();

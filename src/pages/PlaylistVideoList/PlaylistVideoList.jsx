@@ -5,7 +5,7 @@ import {
   PlaylistMenuBtn,
 } from "../../components/components";
 import { useParams,Link } from "react-router-dom";
-import { useVideoContext } from "../../context/videoContext";
+import { useVideoContext } from "../../context/context";
 import { emptyImage2 } from "../../assets/images";
 export function PlayListVideoList() {
   const { playlistId } = useParams();
