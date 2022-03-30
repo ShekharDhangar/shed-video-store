@@ -11,7 +11,7 @@ import { ForgotPassword } from "../ForgotPassword/ForgotPassword";
 import { useState } from "react";
 import {  Loading, Navbar } from "../../../../components/components";
 import { useInputHandler } from "../../../../hooks/customHooks";
-import { useAuthContext } from "../../../../context/AuthContext";
+import { useAuthContext } from "../../../../context/context";
 function AuthLogin() {
   const navigate = useNavigate();
   const {logInUser,guestLogin}= useAuthContext();
@@ -103,7 +103,7 @@ function AuthLogin() {
             )}
           </div>
           <button onClick={userLogin} className="btn btn-md login-btn">
-            {submitState ? <Loading width="25px" height="25px" /> : `Log In`}
+            {submitState ? <Loading width="25px" height="25px" /> : `Log in`}
           </button>
           <button onClick={logInAsGuest} className="btn btn-sm m-1">
             {Guest ? <Loading width="25px" height="25px" /> : `Log As Guest`}

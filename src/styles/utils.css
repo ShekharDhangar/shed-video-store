@@ -3,9 +3,10 @@
     box-sizing: border-box;
     --clr-white:#fff;
     --theme-clr:#1f2028;
-    --overlay-clr: rgba(0, 0, 0, 0.5);
+    --overlay-clr: rgba(0, 0, 0, 0.75);
     color: white;
     --border-clr:#4b4c53;
+    -webkit-tap-highlight-color: transparent;
     font-family: 'Poppins', sans-serif;
   }
   ::-webkit-scrollbar {
@@ -27,6 +28,22 @@
     width: 100%;
     height: 100%;
   }
+  .empty-page-image{
+    max-width: 45rem;
+    border-radius: 1rem;
+  }
+  .empty-page-title{
+    margin-bottom: 2rem;
+  }
+  .empty-page-box{
+    flex-direction: column;
+  }
+  .empty-page-box .btn{
+    margin: 1.5rem 0;
+  }
+  .space-between{
+    justify-content: space-between;
+  }
   .border-radius {
     border-radius: 5px;
   }
@@ -41,7 +58,6 @@
     height: 3.5rem;
   }
   .plain-btn:hover {
-    
     background-color: var(--theme-clr);
   }
   

@@ -1,10 +1,14 @@
 .video-card {
   min-width: 25rem;
-  width: 30rem;
   max-width: 38rem;
-  flex-grow: 1;
+  flex-grow: 2;
+  flex-shrink: 2;
+  width: 30rem;
   margin: 1rem 0;
   flex-shrink: 1;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-clr);
+  cursor: pointer;
 }
 
 .video-img-container img {
@@ -13,12 +17,13 @@
 }
 .video-details {
   justify-content: flex-start;
+  margin: 1rem;
 }
 .video-desc-box {
+  align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  gap: 5px;
-  padding-left: 5px;
+  margin-left: 1rem;
   max-height: 6rem;
 }
 
@@ -28,10 +33,11 @@
   font-weight: 600;
   font-size: 1.15rem;
   text-align: left;
-  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
+  width: 250px;
 }
-
 
 @media only screen and (max-width: 650px) {
   .video-card {
@@ -45,3 +51,8 @@
   }
 }
 
+@media only screen and (max-width: 43.75em) {
+  .video-card {
+    min-width: 30rem;
+  }
+}

@@ -55,7 +55,7 @@ const Navbar = ({ searchBarRequired = true }) => {
             />
             <div
               onClick={() => setDropDown((prev) => !prev)}
-              className="flex pointer user-icon-box relative icon-container"
+              className="flex pointer relative icon-container"
             >
               <FaUserAlt className="user-icon icon size-xs" />
               {DropDown && (
@@ -67,7 +67,7 @@ const Navbar = ({ searchBarRequired = true }) => {
                           logOutUser();
                           navigate("/");
                         }}
-                        className="w-100 btn btn-xs"
+                        className="btn btn-xs"
                       >
                         LogOut
                       </button>
@@ -76,9 +76,9 @@ const Navbar = ({ searchBarRequired = true }) => {
                   {!userState.id && (
                     <button
                       onClick={() => navigate("/login")}
-                      className="w-100 btn btn-xs"
+                      className="btn btn-xs"
                     >
-                      Login/SignUp
+                      Login
                     </button>
                   )}
                 </div>

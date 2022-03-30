@@ -3,6 +3,7 @@
     margin-top: 0;
     overflow: hidden;
     height: 37rem;
+    padding: 1rem;
     border-radius: 5px;
 }
 .display-img-container img{
@@ -12,7 +13,6 @@
 .display-img-container:hover{
     transform: scale(1);
 }
-
 
 
 @media only screen and (max-width:32.5em){

@@ -10,7 +10,7 @@ import {
 } from "../../../../icons/icons";
 import { Loading, Navbar } from "../../../../components/components";
 import { useInputHandler } from "../../../../hooks/customHooks";
-import { useAuthContext } from "../../../../context/AuthContext";
+import { useAuthContext } from "../../../../context/context";
 
 function AuthSignUp() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -27,29 +27,20 @@ function AuthSignUp() {
     password: "",
     password2: "",
   });
-// passwordValidation is not being used currently but will be used in future.
-  const passwordValidation = () => {
-    const passwordExpression =
-    /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
 
-    if (inputState.password !== inputState.password2) {
-      console.log("passwords do not match");
-      return false;
-    }
-    if (!passwordExpression.test(inputState.password) || !inputState.password2.match(passwordExpression)){
-      console.log(!passwordExpression.test(inputState.password),'1');
-      console.log((inputState.password2.match(passwordExpression)),"2");
-      console.log("password should follow rules");
-      return false
-    }
-    return true;
-  };
-
-  
+  const passwordExpression =
+  /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
 
   function submitFormHandler(e) {
     e.preventDefault();
+    const passwordMatch = (inputState.password !== inputState.password2);
+    const passwordExpressionMatch = (!passwordExpression.test(inputState.password) || !inputState.password2.match(passwordExpression))  
+    if(!passwordMatch && !passwordExpressionMatch){
       signUpUser(inputState,setformSubmitState);;
+    }else{
+      console.log('password must cintainer more than 5 characters with number,alphabet and atleast 1 special character')
+    }
+    return true;
   }
   return (
     <>
@@ -61,7 +52,6 @@ function AuthSignUp() {
           className="signup-form"
         >
           <h2 className="form-title txt-center h2 ">Create Account</h2>
-        
           <p className="or">
             <span>or</span>
           </p>
