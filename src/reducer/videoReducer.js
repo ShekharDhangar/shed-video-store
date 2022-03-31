@@ -6,14 +6,7 @@ function videoReducer(state, { type, payload }) {
     case "LOAD_VIDEOS": {
       return {
         ...state,
-        videos: [
-          ...payload.map((video) => ({
-            ...video,
-            isInHistory: false,
-            isInWatchLater: false,
-            isLiked: false,
-          })),
-        ],
+        videos: payload,
         videosLoading: false,
       };
     }
@@ -25,19 +18,20 @@ function videoReducer(state, { type, payload }) {
     case "SET_HISTORY":{
       return {
         ...state,
-        videos:state.videos.map(video=>({...video,isInHistory:payload.some(item=>item._id===video._id)}))
+        history:payload,
       }
     }
     case "SET_WATCHLATER":{
       return {
         ...state,
-        videos:state.videos.map(video=>({...video,isInWatchLater:payload.some(item=>item._id===video._id)}))
+        watchLater:payload,
       }
     }
+    
     case "SET_LIKES":{
       return {
         ...state,
-        videos:state.videos.map(video=>({...video,isLiked:payload.some(item=>item._id===video._id)}))
+        likes:payload,
       }
     }
 

@@ -14,6 +14,7 @@ import {
   getCategorisedData,
   getShuffleArr,
   findById,
+  isPresentInState,
 } from "../../utils/utilCalls";
 import { useScrollToTop } from "../../hooks/customHooks";
 import { useAuthContext } from "../../context/auth-context";
@@ -24,7 +25,7 @@ export function SingleVideoPage() {
   const navigate = useNavigate();
   const { videoStates, dispatch } = useVideoContext();
   const { userState } = useAuthContext();
-  const { videos } = videoStates;
+  const { videos ,likes} = videoStates;
   const foundVideo = findById(videos, videoId);
   const [showPlaylistForm, setPlaylistForm] = useState(false);
   const videoCategory = foundVideo?.category;
@@ -34,7 +35,7 @@ export function SingleVideoPage() {
   );
   const shuffledArr = getShuffleArr(filteredVideos);
   const alteredVideos = shuffledArr.slice(0, 3);
-  const isVideoLiked = foundVideo?.isLiked;
+  const isVideoLiked = isPresentInState(likes,foundVideo);
 
   return (
     <>
@@ -55,7 +56,7 @@ export function SingleVideoPage() {
 
                 <div
                   onClick={() => userState.id ?
-                    likeHandler(foundVideo, userState?.id, dispatch)
+                    likeHandler(likes,foundVideo, userState?.id, dispatch)
                     : navigate("/login")}
                   className="flex menu-icon-box" >
                   <FaHeart className={`icon size-xs ${isVideoLiked?`liked`:""}`} />

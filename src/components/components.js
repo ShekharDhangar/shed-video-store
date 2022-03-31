@@ -8,3 +8,4 @@ export {SingleVideoPlayer} from "./SingleVideoPlayer/SingleVideoPlayer"
 export {PlaylistMenuBtn} from "./PlaylistMenuBtn/PlaylistMenuBtn";
 export {HistoryMenuBtn} from "./HistoryMenuBtn/HistoryMenuBtn"
 export {LikeMenuBtn} from "./LikeMenuBtn/LikesMenuBtn"
+export {WatchLaterMenuBtn} from "./WatchLaterMenuBtn/WatchLaterMenuBtn"

@@ -7,8 +7,7 @@ import { useScrollToTop } from "../../hooks/customHooks";
 
 export function History() {
   const { videoStates } = useVideoContext();
-  const { videos } = videoStates;
-  const history = videos.filter((video) => video.isInHistory);
+  const { history } = videoStates;
   useScrollToTop();
 
   return (

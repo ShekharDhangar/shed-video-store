@@ -12,8 +12,8 @@ import { useScrollToTop } from "../../hooks/customHooks";
 
 export function Likes() {
   const { videoStates } = useVideoContext();
-  const { videos } = videoStates;
-  const likeVideos = videos.filter((video) => video.isLiked);
+  const { liked} = videoStates;
+  // console.log(liked?.length)
   useScrollToTop();
 
   return (
@@ -24,14 +24,14 @@ export function Likes() {
         <Sidebar />
         <section className="content-wrapper">
           <div className="flex card-grid">
-            {likeVideos?.map((video) => (
+            {liked?.map((video) => (
               <VideoCard
                 key={video._id}
                 videoDetails={video}
                 MenuBtn={LikeMenuBtn}
               />
             ))}
-            {likeVideos.length === 0 && (
+            {liked.length === 0 && (
               <div className="flex empty-page-box">
                 <h1 className="empty-page-title">
                   Like Videos Is Currently Empty !

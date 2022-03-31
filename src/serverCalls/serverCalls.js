@@ -2,4 +2,4 @@ export {addVideoToPlaylist,getPlaylists,addToPlaylistList,removeVideoFromPlaylis
 export {getVideos} from "./initialCalls";
 export {addToHistory,removeFromHistory,clearHistory} from "./historyCalls";
 export {addLikedVideo,removeLikedVideo} from "./likeCalls"
-
+export {addToWatchLater,removeFromWatchLater} from "./watchLaterCalls"
