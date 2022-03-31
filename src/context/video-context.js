@@ -6,9 +6,6 @@ function VideoProvider({ children }) {
   const [videoStates, dispatch] = useReducer(videoReducer, {
     videos: [],
     categories: [],
-    liked: [],
-    history: [],
-    watchLater: [],
     playlists: [],
     videosLoading: true,
   });

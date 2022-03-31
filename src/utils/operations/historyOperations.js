@@ -1,31 +1,34 @@
 import { addToHistory,removeFromHistory,clearHistory } from "../../serverCalls/serverCalls";
-export async function addToHistoryCall(video,encodedToken,dispatch){
+export async function addToHistoryCall(video,encodedToken,setState){
     try {
         const response = await addToHistory(video,encodedToken);
         if(response){
-          dispatch({type:"SET_HISTORY",payload:response.data.history});
+          setState(response.data.history);
         }
       } catch (error) {
         console.log(error)
       }
 };
 
-export async function removeFromHistoryCall(video,encodedToken,dispatch){
+
+
+
+export async function removeFromHistoryCall(video,encodedToken,setState){
     try {
         const response = await removeFromHistory(video,encodedToken);
         if(response){
-          dispatch({type:"SET_HISTORY",payload:response.data.history});
+          setState(response.data.history);
         }
       } catch (error) {
         console.log(error)
       }
 };
 
-export async function clearHistoryCall(encodedToken,dispatch){
+export async function clearHistoryCall(encodedToken,setState){
     try {
         const response = await clearHistory(encodedToken);
         if(response){
-          dispatch({type:"SET_HISTORY",payload:response.data.history});
+          setState(response.data.history);
         }
       } catch (error) {
         console.log(error)

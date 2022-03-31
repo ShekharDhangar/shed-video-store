@@ -14,26 +14,6 @@ function videoReducer(state, { type, payload }) {
     case "SET_PLAYLISTS": {
       return { ...state, playlists: payload };
     }
-    
-    case "SET_HISTORY":{
-      return {
-        ...state,
-        history:payload,
-      }
-    }
-    case "SET_WATCHLATER":{
-      return {
-        ...state,
-        watchLater:payload,
-      }
-    }
-    
-    case "SET_LIKES":{
-      return {
-        ...state,
-        likes:payload,
-      }
-    }
 
     case "ACTION_PLAYLIST": {
       return {

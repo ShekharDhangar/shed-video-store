@@ -25,12 +25,6 @@ import {
   removeItemFromLikedVideos,
 } from "./backend/controllers/LikeController";
 import {
-  getWatchLaterVideosHandler,
-  addVideoToWatchLaterHandler,
-  removeVideoFromWatchLaterHandler,
-  clearWatchLaterHandler,
-} from "./backend/controllers/WatchLaterController";
-import {
   getAllPlaylistsHandler,
   addNewPlaylistHandler,
   removePlaylistHandler,
@@ -38,6 +32,12 @@ import {
   addVideoToPlaylistHandler,
   removeVideoFromPlaylistHandler,
 } from "./backend/controllers/PlaylistController";
+import {
+  getWatchLaterVideosHandler,
+  addVideoToWatchLaterHandler,
+  removeVideoFromWatchLaterHandler,
+  clearWatchLaterHandler,
+} from "./backend/controllers/WatchLaterController";
 import { users } from "./backend/db/users";
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -53,7 +53,7 @@ export function makeServer({ environment = "development" } = {}) {
       like: Model,
       history: Model,
       playlist: Model,
-      watchLater: Model,
+      watchlater: Model,
     },
 
     // Runs on the start of the server
@@ -69,7 +69,7 @@ export function makeServer({ environment = "development" } = {}) {
           likes: [],
           history: [],
           playlists: [],
-          watchLater: [],
+          watchlater: [],
         })
       );
     },
@@ -125,14 +125,14 @@ export function makeServer({ environment = "development" } = {}) {
       );
       this.delete("/user/history/all", clearHistoryHandler.bind(this));
 
-      // watchLater routes (private)
-      this.get("/user/watchLater", getWatchLaterVideosHandler.bind(this));
-      this.post("/user/watchLater", addVideoToWatchLaterHandler.bind(this));
+      // watchlater routes (private)
+      this.get("/user/watchlater", getWatchLaterVideosHandler.bind(this));
+      this.post("/user/watchlater", addVideoToWatchLaterHandler.bind(this));
       this.delete(
-        "/user/watchLater/:videoId",
+        "/user/watchlater/:videoId",
         removeVideoFromWatchLaterHandler.bind(this)
       );
-      this.delete("/user/watchLater/all", clearWatchLaterHandler.bind(this));
+      this.delete("/user/watchlater/all", clearWatchLaterHandler.bind(this));
     },
   });
 }

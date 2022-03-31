@@ -9,6 +9,9 @@ export const addToHistory = (video, encodedToken) =>
     }
   );
 
+export const getHistory = (encodedToken) =>
+  axios.get("/api/user/history", { headers: { authorization: encodedToken } });
+
 export const removeFromHistory = (videoID, encodedToken) =>
   axios.delete(`/api/user/history/${videoID}`, {
     headers: { authorization: encodedToken },

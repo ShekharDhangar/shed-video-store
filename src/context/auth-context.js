@@ -9,7 +9,7 @@ import { getAllPlaylistCall } from "../utils/operations/playlistOperations";
 import { useVideoContext } from "./video-context";
 const AuthContext = createContext();
 function AuthProvider({ children }) {
-  const {dispatch}= useVideoContext();
+  const { dispatch } = useVideoContext();
   const [userState, setUserState] = useState({ id: "" });
   async function logInUser(email, password, setState) {
     try {
@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
       });
       const encodedToken = response.data.encodedToken;
       if (response) {
-        useLocalStorageSetItem("user-token", encodedToken);
+        useLocalStorageSetItem("shed-video-token", encodedToken);
         setState(false);
         setUserState({ ...userState, id: encodedToken });
       }
@@ -40,7 +40,7 @@ function AuthProvider({ children }) {
         setUserState({ ...userState, id: encodedToken });
       }
 
-      useLocalStorageSetItem("user-token", encodedToken);
+      useLocalStorageSetItem("shed-video-token", encodedToken);
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +60,7 @@ function AuthProvider({ children }) {
       if (response) {
         setState(false);
         setUserState({ ...userState, id: encodedToken });
-        useLocalStorageSetItem("user-token", encodedToken);
+        useLocalStorageSetItem("shed-video-token", encodedToken);
       }
     } catch (error) {
       console.log(error);
@@ -71,13 +71,13 @@ function AuthProvider({ children }) {
     setUserState({ id: "" });
   }
 
-  const userToken = useLocalStorageGetItem("user-token");
+  const userToken = useLocalStorageGetItem("shed-video-token");
   useEffect(() => {
     (async () => {
       try {
-        if (userToken) {        
-            setUserState({ ...userState, id: userToken });
-          getAllPlaylistCall(userToken,dispatch);
+        if (userToken) {
+          setUserState({ ...userState, id: userToken });
+          getAllPlaylistCall(userToken, dispatch);
         }
       } catch (error) {}
     })();

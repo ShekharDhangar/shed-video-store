@@ -2,14 +2,14 @@ import { Response } from "miragejs";
 import { requiresAuth } from "../utils/authUtils";
 
 /**
- * All the routes related to User WatchLater are present here.
+ * All the routes related to User Watch Later are present here.
  * These are private routes.
  * Client needs to add "authorization" header with JWT token in it to access it.
  * */
 
 /**
- * This handler handles getting videos from user's watchLater.
- * send GET Request at /api/user/watchLater
+ * This handler handles getting videos from user's watchlater.
+ * send GET Request at /api/user/watchlater
  * */
 export const getWatchLaterVideosHandler = function (schema, request) {
   const user = requiresAuth.call(this, request);
@@ -23,7 +23,7 @@ export const getWatchLaterVideosHandler = function (schema, request) {
         }
       );
     }
-    return new Response(200, {}, { watchLater: user.watchLater });
+    return new Response(200, {}, { watchlater: user.watchlater });
   } catch (error) {
     return new Response(
       500,
@@ -36,8 +36,8 @@ export const getWatchLaterVideosHandler = function (schema, request) {
 };
 
 /**
- * This handler handles adding videos to user's watchLater.
- * send POST Request at /api/user/watchLater
+ * This handler handles adding videos to user's watchlater.
+ * send POST Request at /api/user/watchlater
  * body contains {video}
  * */
 
@@ -54,17 +54,17 @@ export const addVideoToWatchLaterHandler = function (schema, request) {
       );
     }
     const { video } = JSON.parse(request.requestBody);
-    if (user.watchLater.some((item) => item.id === video.id)) {
+    if (user.watchlater.some((item) => item._id === video._id)) {
       return new Response(
         409,
         {},
         {
-          errors: ["The video is already in your watchLater"],
+          errors: ["The video is already in your watch later"],
         }
       );
     }
-    user.watchLater.push(video);
-    return new Response(201, {}, { watchLater: user.watchLater });
+    user.watchlater.push({ ...video, isInWatchLater: true, isLiked: false });
+    return new Response(201, {}, { watchlater: user.watchlater });
   } catch (error) {
     return new Response(
       500,
@@ -77,8 +77,8 @@ export const addVideoToWatchLaterHandler = function (schema, request) {
 };
 
 /**
- * This handler handles removing videos from user's watchLater.
- * send DELETE Request at /api/user/watchLater/:videoId
+ * This handler handles removing videos from user's watchlater.
+ * send DELETE Request at /api/user/watchlater/:videoId
  * */
 
 export const removeVideoFromWatchLaterHandler = function (schema, request) {
@@ -94,11 +94,11 @@ export const removeVideoFromWatchLaterHandler = function (schema, request) {
       );
     }
     const videoId = request.params.videoId;
-    const filteredWatchLater = user.watchLater.filter(
+    const filteredWatchLater = user.watchlater.filter(
       (item) => item._id !== videoId
     );
-    this.db.users.update({ watchLater: filteredWatchLater });
-    return new Response(200, {}, { watchLater: filteredWatchLater });
+    this.db.users.update({ watchlater: filteredWatchLater });
+    return new Response(200, {}, { watchlater: filteredWatchLater });
   } catch (error) {
     return new Response(
       500,
@@ -111,8 +111,8 @@ export const removeVideoFromWatchLaterHandler = function (schema, request) {
 };
 
 /**
- * This handler handles removing videos from user's watchLater.
- * send DELETE Request at /api/user/watchLater/all
+ * This handler handles removing videos from user's watchlater.
+ * send DELETE Request at /api/user/watchlater/all
  * */
 
 export const clearWatchLaterHandler = function (schema, request) {
@@ -127,8 +127,8 @@ export const clearWatchLaterHandler = function (schema, request) {
         }
       );
     }
-    this.db.users.update({ watchLater: [] });
-    return new Response(200, {}, { watchLater: [] });
+    this.db.users.update({ watchlater: [] });
+    return new Response(200, {}, { watchlater: [] });
   } catch (error) {
     return new Response(
       500,

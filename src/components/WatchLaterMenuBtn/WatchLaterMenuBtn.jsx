@@ -1,13 +1,13 @@
-import { useVideoContext, useAuthContext } from "../../context/context";
+import { useWatchLaterContext, useAuthContext } from "../../context/context";
 import { removeFromWatchLaterCall } from "../../utils/utils";
 
 export function WatchLaterMenuBtn({ videoID }) {
-  const { dispatch } = useVideoContext();
+  const {setWatchLater}=useWatchLaterContext()
   const { userState } = useAuthContext();
   return (
     <div
       className="menu-icon-box"
-      onClick={() => removeFromWatchLaterCall(videoID, userState?.id, dispatch)}
+      onClick={() => removeFromWatchLaterCall(videoID, userState?.id, setWatchLater)}
     >
       <FaTrash className="icon size-xs" />
     </div>

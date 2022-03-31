@@ -6,14 +6,12 @@ import {
   VideoCard,
 } from "../../components/components";
 import { Link } from "react-router-dom";
-import { useVideoContext } from "../../context/context";
+import { useLikesContext } from "../../context/context";
 import "./Likes.css";
 import { useScrollToTop } from "../../hooks/customHooks";
 
 export function Likes() {
-  const { videoStates } = useVideoContext();
-  const { liked} = videoStates;
-  // console.log(liked?.length)
+  const {Likes} = useLikesContext()
   useScrollToTop();
 
   return (
@@ -24,14 +22,14 @@ export function Likes() {
         <Sidebar />
         <section className="content-wrapper">
           <div className="flex card-grid">
-            {liked?.map((video) => (
+            {Likes?.map((video) => (
               <VideoCard
                 key={video._id}
                 videoDetails={video}
                 MenuBtn={LikeMenuBtn}
               />
             ))}
-            {liked.length === 0 && (
+            {Likes.length === 0 && (
               <div className="flex empty-page-box">
                 <h1 className="empty-page-title">
                   Like Videos Is Currently Empty !

@@ -9,6 +9,9 @@ export const addToWatchLater = (video, encodedToken) =>
     }
   );
 
+  export const getWatchLater = (encodedToken) =>
+  axios.get("/api/user/watchlater", { headers: { authorization: encodedToken } });
+
 export const removeFromWatchLater = (videoID, encodedToken) =>
   axios.delete(`/api/user/watchlater/${videoID}`, {
     headers: { authorization: encodedToken },

@@ -1,14 +1,15 @@
 import "./SingleVideoPlayer.css";
 import ReactPlayer from "react-player/youtube";
-import { useVideoContext, useAuthContext } from "../../context/context";
+import { useVideoContext, useAuthContext ,useHistoryContext} from "../../context/context";
 import { addToHistoryCall } from "../../utils/utils";
 import { useScrollToTop } from "../../hooks/customHooks";
 export function SingleVideoPlayer({ videoId }) {
-  const { videoStates, dispatch } = useVideoContext();
+  const { videoStates } = useVideoContext();
+  const {setHistory}=useHistoryContext()
   const { userState } = useAuthContext();
   const { videos } = videoStates;
   const foundVideo = videos?.find((video) => video._id === videoId);
-  const videoPlayed = () => addToHistoryCall(foundVideo, userState?.id, dispatch);
+  const videoPlayed = () => addToHistoryCall(foundVideo, userState?.id, setHistory);
   useScrollToTop();
   return (
     <div className="player-wrapper">

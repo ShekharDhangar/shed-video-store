@@ -13,6 +13,7 @@ function HomePage() {
   const categorisedVideos = getCategorisedData(videos, category);
   const shuffledArr = getShuffleArr(categorisedVideos);
   useScrollToTop();
+  console.log('render-home');
 
   return (
     <>

@@ -5,7 +5,7 @@ import {
   Loading,
 } from "../../components/components";
 import { useVideoContext } from "../../context/context";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { getCategorisedData, getShuffleArr } from "../../utils/utilCalls";
 import { useScrollToTop } from "../../hooks/customHooks";
 
