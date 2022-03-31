@@ -1,9 +1,9 @@
 import { addToPlaylistList,addVideoToPlaylist,getPlaylists,removePlaylist,removeVideoFromPlaylist} from "../../serverCalls/serverCalls";
 export async function addPlaylistHandler(playlistItem,encodedToken,dispatch){
   try {
-    const response = await addToPlaylistList(playlistItem,encodedToken);
-    if(response.status===201){
-      dispatch({type:"SET_PLAYLISTS",payload:response.data.playlists});
+      const response = await addToPlaylistList(playlistItem,encodedToken);
+      if(response.status===201){
+        dispatch({type:"SET_PLAYLISTS",payload:response.data.playlists});
     }
   } catch (error) {
     console.log(error)

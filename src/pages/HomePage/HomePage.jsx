@@ -4,6 +4,7 @@ import { useVideoContext } from "../../context/context";
 import "./HomePage.css";
 import  { useState } from 'react';
 import { getCategorisedData, getShuffleArr } from "../../utils/utilCalls";
+import { useScrollToTop } from "../../hooks/customHooks";
 
 function HomePage() {
   const { videoStates } = useVideoContext();
@@ -11,14 +12,17 @@ function HomePage() {
   const [category, setCategory] = useState("All");
   const categorisedVideos = getCategorisedData(videos, category);
   const shuffledArr = getShuffleArr(categorisedVideos);
+  useScrollToTop();
+  console.log('render-home');
 
   return (
     <>
       <Navbar />
+      <div className="top"></div>
       <main className="main-wrapper">
         <Sidebar />
         <div className="content-wrapper">
-          <div className="flex chip-container">
+          <div className=" chip-container">
             {categories?.map(({_id,categoryName}) => (
               <button key={_id} onClick={()=>setCategory(categoryName)} className="btn btn-xs chip">{categoryName}</button>
             ))}

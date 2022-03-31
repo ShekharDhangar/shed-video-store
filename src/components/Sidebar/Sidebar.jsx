@@ -1,4 +1,4 @@
-import { AiOutlineHome,MdOutlineExplore,FaHistory ,MdOutlineFeaturedPlayList,ImClock} from "../../icons/icons";
+import { AiOutlineHome,MdOutlineExplore,FaHistory ,MdOutlineFeaturedPlayList,FaRegHeart} from "../../icons/icons";
 import "./Sidebar.css"
 import {useNavigate} from "react-router-dom";
 const sidebarData=[
@@ -25,6 +25,12 @@ const sidebarData=[
     navIcon: <FaHistory className="icon size-xs clock-icon" />,
     navTxt:"History",
     navLink:"/history",
+  },
+  {
+    id:6,
+    navIcon: <FaRegHeart className="icon size-xs" />,
+    navTxt:"Likes",
+    navLink:"/liked-videos",
   },
 ]
 function Sidebar() {

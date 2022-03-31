@@ -1,20 +1,26 @@
-.btn-grp {
+.icon-grp {
   justify-content: flex-end;
   gap: 1rem;
   margin-top: 1rem;
   padding-inline: 1rem;
 }
 
-.btn-grp .plain-btn {
-  border: none;
-  height: min-content;
-  display: flex;
+.icon-grp .menu-icon-box {
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
 }
-
+.liked{
+  color: var(--primary-clr);
+}
+.menu-icon-box span{
+  font-size: 2rem;
+}
 .video-content-wrapper {
   width: 100%;
   max-width: 100%;
   display: flex;
+  padding: 1rem;
 }
 
 .creator-txt {
@@ -32,21 +38,26 @@
   flex-basis: 30%;
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 58.125em) {
   .video-content-wrapper {
     flex-direction: column;
+    padding: 0;
   }
+
   .feature-videos {
     margin-left: 0;
     margin-inline: 1rem;
   }
 }
-@media only screen and (max-width: 600px) {
-  .btn-grp .plain-btn {
+@media only screen and (max-width: 37.5em) {
+  
+  .icon-grp .menu-icon-box {
     flex-direction: column;
   }
-
-  .btn-grp {
+  .menu-icon-box span{
+    font-size: 1.25rem;
+  }
+  .icon-grp {
     justify-content: center;
     gap: 2rem;
   }

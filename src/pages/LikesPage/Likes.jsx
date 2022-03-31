@@ -1,18 +1,17 @@
-import {
-  Navbar,
-  VideoCard,
-  Sidebar,
-  PlaylistMenuBtn,
-} from "../../components/components";
-import { useParams, Link } from "react-router-dom";
-import { useVideoContext } from "../../context/context";
 import { emptyImage2 } from "../../assets/images";
+import {
+  LikeMenuBtn,
+  Navbar,
+  Sidebar,
+  VideoCard,
+} from "../../components/components";
+import { Link } from "react-router-dom";
+import { useLikesContext } from "../../context/context";
+import "./Likes.css";
 import { useScrollToTop } from "../../hooks/customHooks";
-export function PlayListVideoList() {
-  const { playlistId } = useParams();
-  const { videoStates } = useVideoContext();
-  const { playlists } = videoStates;
-  const foundPlaylist = playlists.find((list) => list._id === playlistId);
+
+export function Likes() {
+  const {Likes} = useLikesContext()
   useScrollToTop();
 
   return (
@@ -23,22 +22,22 @@ export function PlayListVideoList() {
         <Sidebar />
         <section className="content-wrapper">
           <div className="flex card-grid">
-            {foundPlaylist.videos?.map((video) => (
+            {Likes?.map((video) => (
               <VideoCard
                 key={video._id}
-                MenuBtn={PlaylistMenuBtn}
                 videoDetails={video}
+                MenuBtn={LikeMenuBtn}
               />
             ))}
-            {foundPlaylist.videos.length === 0 && (
+            {Likes.length === 0 && (
               <div className="flex empty-page-box">
                 <h1 className="empty-page-title">
-                  This Playlist is Currently Empty !
+                  Like Videos Is Currently Empty !
                 </h1>
                 <img
                   className="flex empty-page-image"
                   src={emptyImage2}
-                  alt="empty playlist"
+                  alt="empty Like Videos"
                 />
                 <Link to="/explore">
                   <button className="btn btn-sm ">View Videos</button>

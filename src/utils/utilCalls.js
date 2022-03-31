@@ -11,6 +11,7 @@ export const isPresentInState = (state, data) => {
 
 export const findById = (data, value) =>
   data.find((item) => item._id === value);
+
 export const getShuffleArr = ([...arr]) => {
   var currentIndex = arr.length,
     tempValue,

@@ -1,22 +1,47 @@
-import { Navbar ,Sidebar, VideoCard} from "../../components/components";
-import { useVideoContext } from "../../context/context";
+import { emptyImage2 } from "../../assets/images";
+import { HistoryMenuBtn, Navbar, Sidebar, VideoCard } from "../../components/components";
+import { Link } from "react-router-dom";
+import {useAuthContext, useHistoryContext } from "../../context/context";
+import "./History.css";
+import { useScrollToTop } from "../../hooks/customHooks";
+import { clearHistoryCall } from "../../utils/utils";
 
-export function History(){
-    const { videoStates } = useVideoContext();
-    const { history, videosLoading } = videoStates;
-    return (
-        <>
-        <Navbar/>
-        <main className="flex main-wrapper">
-            <Sidebar/>
-            <section className="flex card-grid">
-            {videosLoading ? (
-              <Loading width="150px" height="150px" />
-            ) : (
-                history?.map(video => <VideoCard key={video._id} videoDetails={video} />)
+export function History() {
+  const {History,setHistory} = useHistoryContext()
+  const {userState}=useAuthContext();
+  useScrollToTop([History]);
+
+  return (
+    <>
+      <Navbar />
+      <div className="top"></div>
+      {History.length>0 && (<div className="flex"><div onClick={()=>clearHistoryCall(userState?.id,setHistory)} className="btn btn-xs plain-btn">Clear All</div></div>)}
+    
+      <main className="flex main-wrapper">
+        <Sidebar />
+        <section className="content-wrapper">
+          <div className="flex card-grid History-videos">
+            {History?.map((video) => (
+              <VideoCard key={video._id} videoDetails={video} MenuBtn={HistoryMenuBtn} />
+            ))}
+            {History.length === 0 && (
+              <div className="flex empty-page-box">
+                <h1 className="empty-page-title">
+                  History Is Currently Empty !
+                </h1>
+                <img
+                  className="flex empty-page-image"
+                  src={emptyImage2}
+                  alt="empty History"
+                />
+                <Link to="/explore">
+                  <button className="btn btn-sm ">View Videos</button>
+                </Link>
+              </div>
             )}
-            </section>
-            </main>
-        </>
-    )
+          </div>
+        </section>
+      </main>
+    </>
+  );
 }

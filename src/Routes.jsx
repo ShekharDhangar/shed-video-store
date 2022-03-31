@@ -4,8 +4,10 @@ import { RestrictAuth } from "./pages/AuthenticationPage/AuthRoutes/restrict-aut
 import {
   AuthLogin,
   AuthSignUp,
+  Error404Page,
   History,
   HomePage,
+  Likes,
   Playlist,
   VideoListing,
   WatchLater,
@@ -19,6 +21,7 @@ function RoutesPath() {
       <Route path="/:videoId" element={<SingleVideoPage />} />
       <Route path="/" element={<HomePage />} />
       <Route path="/explore" element={<VideoListing />} />
+        <Route path="*" element={<Error404Page />}></Route>
 
       <Route element={<RestrictAuth />}>
         <Route path="/login" element={<AuthLogin />} />
@@ -26,6 +29,7 @@ function RoutesPath() {
       </Route>
 
       <Route element={<RequireAuth />}>
+      <Route path="/liked-videos" element={<Likes />} />
         <Route path="/playlist/:playlistId" element={<PlayListVideoList />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/history" element={<History />} /> 

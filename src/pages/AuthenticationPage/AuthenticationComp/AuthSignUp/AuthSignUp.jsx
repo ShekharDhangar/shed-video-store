@@ -38,7 +38,7 @@ function AuthSignUp() {
     if(!passwordMatch && !passwordExpressionMatch){
       signUpUser(inputState,setformSubmitState);;
     }else{
-      console.log('password must cintainer more than 5 characters with number,alphabet and atleast 1 special character')
+      console.log('password must contain more than 5 characters with number,alphabet and atleast 1 special character')
     }
     return true;
   }

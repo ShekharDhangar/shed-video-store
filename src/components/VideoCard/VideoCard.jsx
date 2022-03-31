@@ -32,7 +32,7 @@ function VideoCard({videoDetails,MenuBoxItem=MenuBox,MenuBtn}) {
           )}
           {MenuBtn && <MenuBtn videoId={videoDetails._id}/>}
         {ShowMenu && (
-         < MenuBoxItem videoId={videoDetails._id} setStatePlaylistMenu={setShowPlaylistMenu} setStateMenu={setShowMenu} />
+         < MenuBoxItem video={videoDetails} setStatePlaylistMenu={setShowPlaylistMenu} setStateMenu={setShowMenu} />
         )}
       </div>  
       {showPlaylistMenu && (< AddToPlaylistBox video={videoDetails} setShowPlaylistMenu={setShowPlaylistMenu} />)}

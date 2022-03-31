@@ -7,20 +7,24 @@ import {
 import { useVideoContext } from "../../context/context";
 import { useState } from "react";
 import { getCategorisedData, getShuffleArr } from "../../utils/utilCalls";
+import { useScrollToTop } from "../../hooks/customHooks";
 
 function VideoListing() {
   const { videoStates } = useVideoContext();
-  const { videos, videosLoading ,categories} = videoStates;
+  const { videos, videosLoading, categories } = videoStates;
   const [category, setCategory] = useState("All");
   const categorisedVideos = getCategorisedData(videos, category);
   const shuffledArr = getShuffleArr(categorisedVideos);
+  useScrollToTop();
+
   return (
     <>
       <Navbar />
+      <div className="top"></div>
       <main className="main-wrapper">
         <Sidebar />
         <div className="content-wrapper">
-          <div className="flex chip-container">
+          <div className=" chip-container">
             {categories?.map(({ _id, categoryName }) => (
               <button
                 key={_id}
