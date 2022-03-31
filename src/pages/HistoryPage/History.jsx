@@ -1,19 +1,24 @@
 import { emptyImage2 } from "../../assets/images";
 import { HistoryMenuBtn, Navbar, Sidebar, VideoCard } from "../../components/components";
 import { Link } from "react-router-dom";
-import { useVideoContext } from "../../context/context";
+import {useAuthContext, useVideoContext } from "../../context/context";
 import "./History.css";
 import { useScrollToTop } from "../../hooks/customHooks";
+import { clearHistoryCall } from "../../utils/utils";
 
 export function History() {
-  const { videoStates } = useVideoContext();
+  const { videoStates,dispatch } = useVideoContext();
   const { history } = videoStates;
-  useScrollToTop();
+  const {userState}=useAuthContext();
+  
+  useScrollToTop([history]);
 
   return (
     <>
       <Navbar />
       <div className="top"></div>
+      {history.length>0 && (<div className="flex"><div onClick={()=>clearHistoryCall(userState?.id,dispatch)} className="btn btn-xs plain-btn">Clear All</div></div>)}
+    
       <main className="flex main-wrapper">
         <Sidebar />
         <section className="content-wrapper">

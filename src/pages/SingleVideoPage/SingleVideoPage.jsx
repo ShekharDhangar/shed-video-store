@@ -20,7 +20,6 @@ import { useScrollToTop } from "../../hooks/customHooks";
 import { useAuthContext } from "../../context/auth-context";
 import { likeHandler } from "../../utils/utils";
 export function SingleVideoPage() {
-  useScrollToTop();
   const { videoId } = useParams();
   const navigate = useNavigate();
   const { videoStates, dispatch } = useVideoContext();
@@ -32,10 +31,11 @@ export function SingleVideoPage() {
   const categorisedVideos = getCategorisedData(videos, videoCategory);
   const filteredVideos = categorisedVideos.filter(
     (item) => item._id !== foundVideo._id
-  );
-  const shuffledArr = getShuffleArr(filteredVideos);
-  const alteredVideos = shuffledArr.slice(0, 3);
-  const isVideoLiked = isPresentInState(likes,foundVideo);
+    );
+    const shuffledArr = getShuffleArr(filteredVideos);
+    const alteredVideos = shuffledArr.slice(0, 3);
+    const isVideoLiked = isPresentInState(likes,foundVideo);
+    useScrollToTop([foundVideo]);
 
   return (
     <>

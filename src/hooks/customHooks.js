@@ -3,13 +3,13 @@ import { useState ,useRef,useEffect} from "react";
 const useLocalStorageSetItem= (itemName,itemValue) => localStorage.setItem(itemName,itemValue);
 const useLocalStorageGetItem= (itemName)=>localStorage.getItem(itemName);
 
-const useScrollToTop = () => {
+const useScrollToTop = ({dependency}=[]) => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  },[]);
+  },dependency);
 };
 
 
