@@ -12,7 +12,7 @@ function HomePage() {
   const [category, setCategory] = useState("All");
   const categorisedVideos = getCategorisedData(videos, category);
   const shuffledArr = getShuffleArr(categorisedVideos);
-  useScrollToTop();
+  useScrollToTop(); 
 
   return (
     <>

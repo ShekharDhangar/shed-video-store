@@ -47,7 +47,7 @@ function VideoCard({ videoDetails, MenuBoxItem = MenuBox, MenuBtn }) {
       </div>
       <div className="relative flex video-details">
         {videoDetails.logo && (
-          <div class="avatar-container size-sm ">
+          <div className="avatar-container size-sm ">
             <img
               src={videoDetails.logo}
               alt={`logo of ${videoDetails.creator}`}
