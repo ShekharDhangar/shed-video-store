@@ -3,7 +3,6 @@ import {
   VideoCard,
   MobileSidebar,
   Sidebar,
-  PlaylistMenuBtn,
 } from "../../components/components";
 import { useParams, Link } from "react-router-dom";
 import { useVideoContext } from "../../context/context";
@@ -28,7 +27,7 @@ export function PlayListVideoList() {
             {foundPlaylist.videos?.map((video) => (
               <VideoCard
                 key={video._id}
-                MenuBtn={PlaylistMenuBtn}
+                MenuBtn={true}
                 videoDetails={video}
               />
             ))}

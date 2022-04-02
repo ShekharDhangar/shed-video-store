@@ -1,12 +1,13 @@
 import "./VideoCard.css";
 import { BsThreeDotsVertical, FaTrash } from "../../icons/icons";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation,useParams } from "react-router-dom";
 import { useState } from "react";
 import { AddToPlaylistBox } from "../components";
 import { MenuBox } from "./MenuBox/MenuBox";
 import {
   useAuthContext,
   useHistoryContext,
+  useVideoContext,
   useLikesContext,
   useWatchLaterContext,
 } from "../../context/context";
@@ -14,14 +15,17 @@ import {
   removeLikedVideoCall,
   removeFromHistoryCall,
   removeFromWatchLaterCall,
+  removeVideoFromPlaylistCall,
 } from "../../utils/utils";
 
 function VideoCard({ videoDetails, MenuBoxItem = MenuBox, MenuBtn }) {
   const location = useLocation();
+  const {dispatch}= useVideoContext();
   const { userState } = useAuthContext();
   const { setHistory } = useHistoryContext();
   const { setLikes } = useLikesContext();
   const { setWatchLater } = useWatchLaterContext();
+  const { playlistId } = useParams();
 
   const deleteBtnHandler = () => {
     if (location.pathname === "/history") {
@@ -30,6 +34,8 @@ function VideoCard({ videoDetails, MenuBoxItem = MenuBox, MenuBtn }) {
       removeLikedVideoCall(videoDetails?._id, userState?.id, setLikes);
     } else if (location.pathname === "/watchLater") {
       removeFromWatchLaterCall(videoDetails?._id, userState?.id, setWatchLater);
+    }else{
+      removeVideoFromPlaylistCall(playlistId,videoDetails?._id,userState?.id,dispatch);
     }
   };
   const [ShowMenu, setShowMenu] = useState(false);

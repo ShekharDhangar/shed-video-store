@@ -25,7 +25,6 @@ export async function removeLikedVideoCall(videoID, encodedToken, setState) {
 }
 
 export const likeHandler = (state,video, encodedToken, setState) =>{
-    console.log('called',video);
     const isVideoLiked = isPresentInState(state,video);
     isVideoLiked
     ? removeLikedVideoCall(video._id, encodedToken, setState)

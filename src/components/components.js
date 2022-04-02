@@ -5,5 +5,4 @@ export { VideoCard } from "./VideoCard/VideoCard";
 export { AddToPlaylistBox } from "./VideoCard/AddPlaylistBox/AddPlaylistBox";
 export {Loading} from "./Loading/Loading"
 export {SingleVideoPlayer} from "./SingleVideoPlayer/SingleVideoPlayer"
-export {PlaylistMenuBtn} from "./PlaylistMenuBtn/PlaylistMenuBtn";
 export {MobileSidebar} from "./MobileSidebar/MobileSidebar"
