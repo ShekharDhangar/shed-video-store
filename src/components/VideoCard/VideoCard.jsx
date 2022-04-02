@@ -63,7 +63,7 @@ function VideoCard({ videoDetails, MenuBoxItem = MenuBox, MenuBtn }) {
           <p className="video-title">{videoDetails.title}</p>
           <p className="creator-name">~{videoDetails.creator}</p>
         </div>
-        <div className="">
+        <div className="flex icon-box">
         {!MenuBtn && (
           <BsThreeDotsVertical
             onClick={() => setShowMenu((prev) => !prev)}

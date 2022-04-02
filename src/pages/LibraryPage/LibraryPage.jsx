@@ -43,7 +43,7 @@ export function LibraryPage() {
               <div className="short-video-card">
                 {History?.length > 0
                   ? HistoryArr.map((HistoryItem) => (
-                      <VideoCard videoDetails={HistoryItem} MenuBtn={true} />
+                      <VideoCard key={HistoryItem._id} videoDetails={HistoryItem} MenuBtn={true} />
                     ))
                   : <p className="txt-sm">No videos present in History</p>}
             </div>
@@ -59,7 +59,7 @@ export function LibraryPage() {
               <div className="short-video-card">
                 {WatchLater?.length > 0
                   ? WatchLater.slice(0, 6).map((WatchLaterItem) => (
-                      <VideoCard videoDetails={WatchLaterItem} MenuBtn={true} />
+                      <VideoCard key={WatchLaterItem._id} videoDetails={WatchLaterItem} MenuBtn={true} />
                     ))
                   :  <p className="txt-sm">No videos present in watch later</p>}
             </div>
@@ -90,7 +90,7 @@ export function LibraryPage() {
               <div className="short-video-card">
                 {Likes?.length > 0
                   ? Likes.slice(0, 6).map((LikesItem) => (
-                      <VideoCard videoDetails={LikesItem} MenuBtn={true} />
+                      <VideoCard key={LikesItem._id} videoDetails={LikesItem} MenuBtn={true} />
                     ))
                   :  <p className="txt-sm">No videos is liked</p>}
             </div>

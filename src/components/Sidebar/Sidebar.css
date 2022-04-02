@@ -43,6 +43,6 @@
 .active .sidebar-icon-container{
     background-color: var(--clr-grey);
 }
-.icon.size-xs,.nav-icon-txt{
+.sidebar-icon-container .icon.size-xs,.nav-icon-txt{
     color: var(--clr-white);
 }
