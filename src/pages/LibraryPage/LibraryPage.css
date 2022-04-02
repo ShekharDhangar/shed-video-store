@@ -27,16 +27,8 @@
 .short-video-card .title {
   font-size: 1.5rem;
 }
-.short-video-card .short-card .video-details .icon-box{
-    justify-content: flex-end;
-    width: 100%;
-}
-.short-video-card .short-card .icon.size-xs{
-    width: 2rem;
-    height: 2rem;
-}
-.short-video-card .short-card .video-desc-box,
-.short-video-card .short-card .avatar-container{
+
+.short-video-card .short-card .video-menu-btn{
   display: none;
 }
 @media only screen and (max-width: 43.75em) {

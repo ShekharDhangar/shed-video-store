@@ -18,9 +18,7 @@ import { useHistoryContext } from "../../context/history-context";
 import { useLikesContext } from "../../context/likes-context";
 import { useWatchLaterContext } from "../../context/watchLater-context";
 import { useVideoContext } from "../../context/video-context";
-import { useAuthContext } from "../../context/auth-context";
 export function LibraryPage() {
-  const { userState } = useAuthContext();
   const navigate = useNavigate();
   const { History } = useHistoryContext();
   const { Likes } = useLikesContext();
@@ -43,7 +41,7 @@ export function LibraryPage() {
               <div className="short-video-card">
                 {History?.length > 0
                   ? HistoryArr.map((HistoryItem) => (
-                      <VideoCard key={HistoryItem._id} videoDetails={HistoryItem} MenuBtn={true} />
+                      <VideoCard key={HistoryItem._id} videoDetails={HistoryItem}  />
                     ))
                   : <p className="txt-sm">No videos present in History</p>}
             </div>
@@ -59,7 +57,7 @@ export function LibraryPage() {
               <div className="short-video-card">
                 {WatchLater?.length > 0
                   ? WatchLater.slice(0, 6).map((WatchLaterItem) => (
-                      <VideoCard key={WatchLaterItem._id} videoDetails={WatchLaterItem} MenuBtn={true} />
+                      <VideoCard key={WatchLaterItem._id} videoDetails={WatchLaterItem}  />
                     ))
                   :  <p className="txt-sm">No videos present in watch later</p>}
             </div>
@@ -90,7 +88,7 @@ export function LibraryPage() {
               <div className="short-video-card">
                 {Likes?.length > 0
                   ? Likes.slice(0, 6).map((LikesItem) => (
-                      <VideoCard key={LikesItem._id} videoDetails={LikesItem} MenuBtn={true} />
+                      <VideoCard key={LikesItem._id} videoDetails={LikesItem}  />
                     ))
                   :  <p className="txt-sm">No videos is liked</p>}
             </div>

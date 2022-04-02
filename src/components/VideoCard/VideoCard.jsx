@@ -63,11 +63,10 @@ function VideoCard({ videoDetails, MenuBoxItem = MenuBox, MenuBtn }) {
           <p className="video-title">{videoDetails.title}</p>
           <p className="creator-name">~{videoDetails.creator}</p>
         </div>
-        <div className="flex icon-box">
         {!MenuBtn && (
           <BsThreeDotsVertical
             onClick={() => setShowMenu((prev) => !prev)}
-            className="icon size-xs"
+            className="icon size-xs video-menu-btn"
           />
         )}
 
@@ -83,7 +82,6 @@ function VideoCard({ videoDetails, MenuBoxItem = MenuBox, MenuBtn }) {
             setStateMenu={setShowMenu}
           />
         )}
-      </div>
       </div>
       {showPlaylistMenu && (
         <AddToPlaylistBox
