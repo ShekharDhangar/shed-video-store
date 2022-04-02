@@ -1,6 +1,7 @@
 import {
   Navbar,
   VideoCard,
+  MobileSidebar,
   Sidebar,
   PlaylistMenuBtn,
 } from "../../components/components";
@@ -21,6 +22,7 @@ export function PlayListVideoList() {
       <div className="top"></div>
       <main className="main-wrapper">
         <Sidebar />
+        <MobileSidebar/>
         <section className="content-wrapper">
           <div className="flex card-grid">
             {foundPlaylist.videos?.map((video) => (
@@ -30,7 +32,7 @@ export function PlayListVideoList() {
                 videoDetails={video}
               />
             ))}
-            {foundPlaylist.videos.length === 0 && (
+            {foundPlaylist?.videos?.length === 0 && (
               <div className="flex empty-page-box">
                 <h1 className="empty-page-title">
                   This Playlist is Currently Empty !

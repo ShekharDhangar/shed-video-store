@@ -1,5 +1,5 @@
 import { emptyImage2 } from "../../assets/images";
-import { HistoryMenuBtn, Navbar, Sidebar, VideoCard } from "../../components/components";
+import {  Navbar, Sidebar, VideoCard } from "../../components/components";
 import { Link } from "react-router-dom";
 import {useAuthContext, useHistoryContext } from "../../context/context";
 import "./History.css";
@@ -10,19 +10,18 @@ export function History() {
   const {History,setHistory} = useHistoryContext()
   const {userState}=useAuthContext();
   useScrollToTop([History]);
-
   return (
     <>
       <Navbar />
       <div className="top"></div>
-      {History.length>0 && (<div className="flex"><div onClick={()=>clearHistoryCall(userState?.id,setHistory)} className="btn btn-xs plain-btn">Clear All</div></div>)}
+      {History?.length>0 && (<div className="flex"><div onClick={()=>clearHistoryCall(userState?.id,setHistory)} className="btn btn-xs plain-btn">Clear All</div></div>)}
     
       <main className="flex main-wrapper">
         <Sidebar />
         <section className="content-wrapper">
           <div className="flex card-grid History-videos">
             {History?.map((video) => (
-              <VideoCard key={video._id} videoDetails={video} MenuBtn={HistoryMenuBtn} />
+              <VideoCard key={video._id} videoDetails={video} MenuBtn={true} />
             ))}
             {History.length === 0 && (
               <div className="flex empty-page-box">

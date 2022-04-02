@@ -1,5 +1,5 @@
 import { emptyImage2 } from "../../assets/images";
-import { Navbar, Sidebar, PlaylistPageCard, AddToPlaylistBox } from "../../components/components";
+import { Navbar, Sidebar, PlaylistPageCard,MobileSidebar, AddToPlaylistBox } from "../../components/components";
 import { useVideoContext } from "../../context/context";
 import { useScrollToTop } from "../../hooks/customHooks";
 import { useState } from "react";
@@ -14,12 +14,13 @@ export function Playlist() {
       <div className="top"></div>
       <main className="main-wrapper">
         <Sidebar />
+        <MobileSidebar/>
         <div className="content-wrapper">
           <section className="flex card-grid">
             {playlists?.map((playlistItem) => (
               <PlaylistPageCard key={playlistItem._id} card={playlistItem} />
             ))}
-            {playlists.length === 0 && (
+            {playlists?.length === 0 && (
               <div className="flex empty-page-box">
                 <h1 className="empty-page-title">YOU HAVE 0 PLAYLISTS !</h1>
                 <img

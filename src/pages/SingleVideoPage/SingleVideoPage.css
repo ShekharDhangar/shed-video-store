@@ -10,7 +10,7 @@
   padding: 1rem;
   cursor: pointer;
 }
-.liked{
+.present{
   color: var(--primary-clr);
 }
 .menu-icon-box span{

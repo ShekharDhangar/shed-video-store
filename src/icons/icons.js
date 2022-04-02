@@ -8,7 +8,7 @@ import {
   FaUserAlt,
 } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch,BiShuffle } from "react-icons/bi";
 import { ImClock } from "react-icons/im";
 import { IoChevronBack } from "react-icons/io5";
 import {
@@ -28,6 +28,7 @@ import {
 } from "react-icons/bs";
 import {
   MdEmail,
+  MdOutlineVideoLibrary,
   MdOutlineExplore,
   MdError,
   MdOutlineFeaturedPlayList,
@@ -35,6 +36,7 @@ import {
 import { RiPlayListAddLine } from "react-icons/ri";
 
 export {
+  BiShuffle,
   RiPlayListAddLine,
   AiOutlinePlus,
   FaHistory,
@@ -44,6 +46,7 @@ export {
   AiOutlineCloseCircle,
   MdOutlineFeaturedPlayList,
   ImClock,
+  MdOutlineVideoLibrary,
   AiOutlineHome,
   MdEmail,
   MdError,

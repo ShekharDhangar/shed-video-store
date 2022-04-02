@@ -1,17 +1,12 @@
 import { emptyImage2 } from "../../assets/images";
-import {
-  LikeMenuBtn,
-  Navbar,
-  Sidebar,
-  VideoCard,
-} from "../../components/components";
+import { Navbar, Sidebar, VideoCard,MobileSidebar } from "../../components/components";
 import { Link } from "react-router-dom";
 import { useLikesContext } from "../../context/context";
 import "./Likes.css";
 import { useScrollToTop } from "../../hooks/customHooks";
 
 export function Likes() {
-  const {Likes} = useLikesContext()
+  const { Likes } = useLikesContext();
   useScrollToTop();
 
   return (
@@ -20,16 +15,13 @@ export function Likes() {
       <div className="top"></div>
       <main className="main-wrapper">
         <Sidebar />
+        <MobileSidebar/>
         <section className="content-wrapper">
           <div className="flex card-grid">
             {Likes?.map((video) => (
-              <VideoCard
-                key={video._id}
-                videoDetails={video}
-                MenuBtn={LikeMenuBtn}
-              />
+              <VideoCard key={video._id} videoDetails={video} MenuBtn={true} />
             ))}
-            {Likes.length === 0 && (
+            {Likes?.length === 0 && (
               <div className="flex empty-page-box">
                 <h1 className="empty-page-title">
                   Like Videos Is Currently Empty !

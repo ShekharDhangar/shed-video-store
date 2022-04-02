@@ -5,7 +5,7 @@ import { addToWatchLaterCall, removeFromWatchLaterCall } from "../../../utils/ut
 export function MenuBox({ setStatePlaylistMenu, setStateMenu, video }) {
   const { userState } = useAuthContext();
   const {WatchLater,setWatchLater} = useWatchLaterContext()
-  const isVideoInWatchLater = isPresentInState(WatchLater, video);
+  const isVideoInWatchLater = userState.id && isPresentInState(WatchLater, video);
   return (
     <div className="absolute inset-0 flex video-card-btns">
       {isVideoInWatchLater ? (

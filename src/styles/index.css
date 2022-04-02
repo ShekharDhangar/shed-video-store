@@ -1,4 +1,7 @@
 @import url("https://shed-ui.netlify.app/component.css");
+::-webkit-scrollbar {
+  width: 0px;
+}
 :root {
   --discount-clr: #1c7228;
   --clr-ratings: #efa41b;
@@ -16,21 +19,20 @@
   padding: 5px;
 }
 .chip {
-  flex: 0 0 auto;
+  flex-shrink: 0;
   border-radius: 5rem;
 }
 .chip-container {
-  justify-content: center;
-  align-items: center;
+  padding-inline: 1rem;
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: scroll;
+  width: 100%;
   margin-bottom: 1rem;
   gap: 1rem;
 }
 .video-card-btns {
   flex-direction: column;
-  right: 2rem;
+  right: 3rem;
   top: -2rem;
   gap: 5px;
 }
@@ -44,6 +46,7 @@
   width: 100%;
   max-width: 100%;
   display: flex;
+  padding-bottom: 5rem;
   flex-direction: column;
 }
 

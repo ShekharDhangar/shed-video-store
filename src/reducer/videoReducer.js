@@ -3,6 +3,7 @@ function videoReducer(state, { type, payload }) {
     case "SET_CATEGORIES": {
       return { ...state, categories: payload };
     }
+    
     case "LOAD_VIDEOS": {
       return {
         ...state,

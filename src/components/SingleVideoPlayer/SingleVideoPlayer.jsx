@@ -9,7 +9,7 @@ export function SingleVideoPlayer({ videoId }) {
   const { userState } = useAuthContext();
   const { videos } = videoStates;
   const foundVideo = videos?.find((video) => video._id === videoId);
-  const videoPlayed = () => addToHistoryCall(foundVideo, userState?.id, setHistory);
+  const videoPlayed = () => userState.id && addToHistoryCall(foundVideo, userState?.id, setHistory)
   useScrollToTop();
   return (
     <div className="player-wrapper">

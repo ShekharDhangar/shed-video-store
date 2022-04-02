@@ -16,7 +16,7 @@ import { useLocalStorageGetItem } from "../hooks/customHooks";
           if (userToken) {
             const WatchLaterResponse = await getWatchLater(userToken);
             if (WatchLaterResponse) {
-              setWatchLater(WatchLaterResponse);
+              setWatchLater(WatchLaterResponse.data.watchlater);
             }
           }
         } catch (error) {
