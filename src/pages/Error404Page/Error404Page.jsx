@@ -5,10 +5,12 @@ export function Error404Page() {
     const navigate = useNavigate();
     const [counter, setCounter] = useState(10);
     useEffect(() => {
-        counter > 0 && setTimeout(() =>setCounter(count=>count-1), 1000);
+        const timer = counter > 0 && setTimeout(() =>setCounter(count=>count-1), 1000);
+        console.log(timer)
         if(counter===0){
             navigate("/")
         }
+        return (()=>clearTimeout(timer));
       }, [counter]);
 
   return (
