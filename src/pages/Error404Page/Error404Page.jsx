@@ -6,7 +6,6 @@ export function Error404Page() {
     const [counter, setCounter] = useState(10);
     useEffect(() => {
         const timer = counter > 0 && setTimeout(() =>setCounter(count=>count-1), 1000);
-        console.log(timer)
         if(counter===0){
             navigate("/")
         }
