@@ -28,8 +28,8 @@ function AuthSignUp() {
     password2: "",
   });
 
-  const passwordExpression =
-  /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
+  const passwordExpression = 
+  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
   function submitFormHandler(e) {
     e.preventDefault();
@@ -38,7 +38,7 @@ function AuthSignUp() {
     if(!passwordMatch && !passwordExpressionMatch){
       signUpUser(inputState,setformSubmitState);;
     }else{
-      console.log('password must contain more than 5 characters with number,alphabet and atleast 1 special character')
+      console.log('password must contain more than 8 characters with number,lower and upper case alphabet and atleast 1 special character')
     }
     return true;
   }
@@ -52,9 +52,6 @@ function AuthSignUp() {
           className="signup-form"
         >
           <h2 className="form-title txt-center h2 ">Create Account</h2>
-          <p className="or">
-            <span>or</span>
-          </p>
           <div className="name-input-box">
             <div className="input-with-icon ">
               <FaUserAlt className="icon size-xs" />
