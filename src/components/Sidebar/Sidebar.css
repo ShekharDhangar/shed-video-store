@@ -1,7 +1,6 @@
 .sidebar-container{
     flex-direction: column;
     height: 100%;
-    position: sticky;
     top:8rem;
     width: 12rem;
     z-index: 10;

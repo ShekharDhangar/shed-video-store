@@ -5,7 +5,6 @@ import {
   VideoCard,
   PlaylistPageCard,
 } from "../../components/components";
-import { emptyImage2 } from "../../assets/images";
 import "./LibraryPage.css";
 import { useNavigate } from "react-router-dom";
 import {
