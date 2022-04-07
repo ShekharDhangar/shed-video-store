@@ -1,4 +1,4 @@
-import {  Navbar, Sidebar, VideoCard } from "../../components/components";
+import {  MobileSidebar, Navbar, Sidebar, VideoCard } from "../../components/components";
 import { Loading } from "../../components/Loading/Loading";
 import { useVideoContext } from "../../context/context";
 import "./HomePage.css";
@@ -12,8 +12,7 @@ function HomePage() {
   const [category, setCategory] = useState("All");
   const categorisedVideos = getCategorisedData(videos, category);
   const shuffledArr = getShuffleArr(categorisedVideos);
-  useScrollToTop();
-  console.log('render-home');
+  useScrollToTop(); 
 
   return (
     <>
@@ -21,6 +20,7 @@ function HomePage() {
       <div className="top"></div>
       <main className="main-wrapper">
         <Sidebar />
+        < MobileSidebar/>
         <div className="content-wrapper">
           <div className=" chip-container">
             {categories?.map(({_id,categoryName}) => (

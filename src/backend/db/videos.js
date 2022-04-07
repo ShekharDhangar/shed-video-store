@@ -5,18 +5,18 @@
 export const videos = [
   {
     _id: "gO8N3L_aERg",
-    category: "the office",
     title: "Fire Drill",
     creator: "The Office US",
     category: "the office",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/gO8N3L_aERg/hq720.jpg",
-    gif: "https://i.ytimg.com/an_webp/gO8N3L_aERg/mqdefault_6s.webp?du=3000&sqp=CMD7hpIG&rs=AOn4CLDTF_3di6QbygPF317rB6vctLPPzg",
   },
   {
     _id: "Xnk4seEHmgw",
     title: "Jim's Pranks Against Dwight",
     creator: "The Office US",
     category: "the office",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/Xnk4seEHmgw/hq720.jpg",
   },
   {
@@ -24,15 +24,15 @@ export const videos = [
     title: "Michael Knows a Secret ",
     creator: "The Office US",
     category: "the office",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/g8kCYiKkS4Q/hq720.jpg",
-    gif: "https://i.ytimg.com/an_webp/g8kCYiKkS4Q/mqdefault_6s.webp?du=3000&sqp=CIj6hpIG&rs=AOn4CLDBCBypvyChKxBu92gcjolvCY4vDg",
   },
   {
     _id: "NEV6ko7PIpE",
     title: "Office Cameos",
     creator: "The Office US",
     category: "the office",
-    gif: "	https://i.ytimg.com/an_webp/NEV6ko7PIpE/mqdefault_…qp=CMX4hpIG&rs=AOn4CLD8rkuRKRbWZQK8nud6IZICXEEGFg",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/NEV6ko7PIpE/hq720.jpg",
   },
   {
@@ -40,39 +40,39 @@ export const videos = [
     title: "Gabe Loves Girl Talk ",
     creator: "The Office US",
     category: "the office",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/6mIpzyVv8RU/hq720.jpg",
-    gif: "https://i.ytimg.com/an_webp/6mIpzyVv8RU/mqdefault_6s.webp?du=3000&sqp=CMrkhpIG&rs=AOn4CLCV5TlO764DG2U82bOiys5aCRvhWQ",
   },
   {
     _id: "4BUgLMldFQY",
-    gif: "https://i.ytimg.com/an_webp/4BUgLMldFQY/mqdefault_…qp=CIqKh5IG&rs=AOn4CLD4SdZtD_o8c3LERthtb_z41LjlAw",
     img: "https://i.ytimg.com/vi/4BUgLMldFQY/hq720.jpg",
     title: "The Office - Signs of a Declining Sitcom",
     creator: "The Office US",
     category: "the office",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
   },
   {
     _id: "ryxUeWEcUqE",
     title: "The Office Wedding Dance",
     img: "https://i.ytimg.com/vi/ryxUeWEcUqE/hq720.jpg",
-    gif: "https://i.ytimg.com/an_webp/ryxUeWEcUqE/mqdefault_…qp=COrxhpIG&rs=AOn4CLC0hWb5YRd4exnvEqs7pSRT4bmfZQ",
     creator: "The Office US",
     category: "the office",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
   },
   {
     _id: "VSv64fV0LDk",
     title: "Best of Kelly Kapoor",
     img: "https://i.ytimg.com/vi/VSv64fV0LDk/hq720.jpg",
-    gif: "https://i.ytimg.com/an_webp/VSv64fV0LDk/mqdefault_6s.webp?du=3000&sqp=CMLwhpIG&rs=AOn4CLC0qSgBy5y3QXEcr0QyiBmQfkf_aQ",
     creator: "The Office US",
     category: "the office",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
   },
   {
     _id: "MAg2jw0uZ3I",
     title: "China, China, China",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/MAg2jw0uZ3I/mqdefault_6s.webp?du=3000&sqp=CKDlhpIG&rs=AOn4CLCYwL8cHrJ9ihVpMaijgUCD6n5PDA",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "	https://i.ytimg.com/vi/MAg2jw0uZ3I/hq720.jpg",
   },
   {
@@ -80,7 +80,7 @@ export const videos = [
     title: "The IT Guy Exposes Everyone's Secrets",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/RFQRM1B2AKA/mqdefault_6s.webp?du=3000&sqp=CNDshpIG&rs=AOn4CLCndeloXmHe8QSOqLoz897FXm3l0w",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "	https://i.ytimg.com/vi/RFQRM1B2AKA/hq720.jpg",
   },
   {
@@ -88,7 +88,7 @@ export const videos = [
     title: "Michael Visits Pam's Art Show",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/D-9E-5Zm6-0/mqdefault_6s.webp?du=3000&sqp=CLyuh5IG&rs=AOn4CLBATfdGX_Im89X6hzuFu6E1uQ3iVA",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/D-9E-5Zm6-0/hq720.jpg",
   },
   {
@@ -96,7 +96,7 @@ export const videos = [
     title: "why are you the way that you are",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/FdJpweIPbWw/mqdefault_6s.webp?du=3000&sqp=CPiZh5IG&rs=AOn4CLDcL4lXr70Kr6nY3BxosZXYwmfFeA",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/FdJpweIPbWw/hq720.jpg",
   },
   {
@@ -104,7 +104,7 @@ export const videos = [
     title: "911 CALL ME",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/OkPp0I5PXJw/mqdefault_6s.webp?du=3000&sqp=COiwh5IG&rs=AOn4CLDYCnJM_71mGeALT0_9HlnO6bmJlw",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/OkPp0I5PXJw/hq720.jpg",
   },
   {
@@ -112,7 +112,7 @@ export const videos = [
     title: "i'll kill you",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/96ix3P9WaRc/mqdefault_6s.webp?du=3000&sqp=CKGih5IG&rs=AOn4CLDma9xHVZAVPuIdPIjc0nV5U-M_Ng",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/96ix3P9WaRc/hq720.jpg",
   },
   {
@@ -120,7 +120,7 @@ export const videos = [
     title: "Andy Thinks He's Gay",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/OvoOnZkQCcw/mqdefault_6s.webp?du=3000&sqp=COCrh5IG&rs=AOn4CLDr3Y7AqrtHUtHGCgdVTaVu3mc42g",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/OvoOnZkQCcw/hq720.jpg",
   },
   {
@@ -128,7 +128,7 @@ export const videos = [
     title: "CLASH OF TITANS",
     creator: "The Office US",
     category: "the office",
-    gif: "https://i.ytimg.com/an_webp/c0AMd6uSQAw/mqdefault_6s.webp?du=3000&sqp=CMi1h5IG&rs=AOn4CLD9eCl3nPaSVHIeLqBkdi45Oh_S-g",
+    logo: "https://yt3.ggpht.com/ytc/AKedOLR6J8RinEENwSX3uR4ab38mKWrIuFqnWRZQaKxEvQ=s68-c-k-c0x00ffffff-no-rj",
     img: "https://i.ytimg.com/vi/c0AMd6uSQAw/hq720.jpg",
   },
 
@@ -137,7 +137,7 @@ export const videos = [
     title: "Phoebe, Chandler, Monica Babysit The Triplets ",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/9-hmg1UHySY/mqdefault_6s.webp?du=3000&sqp=CLDdi5IG&rs=AOn4CLBtc-yQl5mA0mU4zhooFKkWCJNmHQ",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/9-hmg1UHySY/hq720.jpg",
   },
   {
@@ -145,7 +145,7 @@ export const videos = [
     title: "The Friends Meet Rachel's Spoiled Sister",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/L5STHzbIglg/mqdefault_6s.webp?du=3000&sqp=CND0i5IG&rs=AOn4CLBHfe21qxWji8MmW8oLd_xmxNqVFA",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/L5STHzbIglg/hq720.jpg",
   },
   {
@@ -153,7 +153,7 @@ export const videos = [
     title: "FRIENDS OG",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/Xs-HbHCcK58/mqdefault_6s.webp?du=3000&sqp=CJzci5IG&rs=AOn4CLA3XTl-07hcPwkU1WjIUKN5znCkuA",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/Xs-HbHCcK58/hq720.jpg",
   },
   {
@@ -161,7 +161,7 @@ export const videos = [
     title: "Monica and Chandler Almost Get Married",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/E47mx4rsVCI/mqdefault_6s.webp?du=3000&sqp=CK7xi5IG&rs=AOn4CLCrJx0Wk89Gzo7hj-UcpBQIpwgrCg",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/E47mx4rsVCI/hq720.jpg",
   },
   {
@@ -169,7 +169,7 @@ export const videos = [
     title: "Chandler and Monica Debate Their New Guest Room",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/_I0N-w7QEHc/mqdefault_6s.webp?du=3000&sqp=CMHzi5IG&rs=AOn4CLCFMtLQ4DWxLXNbdz8Ltu9N_Zw_vw",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/_I0N-w7QEHc/hq720.jpg",
   },
   {
@@ -177,15 +177,14 @@ export const videos = [
     title: "Friends: Rachel Being Rachel (Mashup)",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/iLy0E48RPyE/mqdefault_6s.webp?du=3000&sqp=CNXsi5IG&rs=AOn4CLCoB3KeS23jDxfBDDSnZ_cgAsbdRQ",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/iLy0E48RPyE/hq720.jpg",
   },
   {
     _id: "221F55VPp2M",
-    title: "Friends: Joey's Bad Birthday Gift",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/221F55VPp2M/mqdefault_6s.webp?du=3000&sqp=COXhi5IG&rs=AOn4CLDU-3EU0YkwV06bplWZjUx9KrkUrw",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/221F55VPp2M/hq720.jpg",
   },
   {
@@ -193,7 +192,7 @@ export const videos = [
     title: "Bests scenes of FRIENDS",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/P5TMcx0ofEc/mqdefault_6s.webp?du=3000&sqp=CMP4i5IG&rs=AOn4CLCId2cgOriGffVWDZsWpkUdXuEfLw",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/P5TMcx0ofEc/hq720.jpg",
   },
   {
@@ -201,7 +200,7 @@ export const videos = [
     title: "Friends: Joey Finds Out",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/XZVHmRvfDHM/mqdefault_6s.webp?du=3000&sqp=CN-CjJIG&rs=AOn4CLD27Ji_dWTfQzDkyn62hO4yJOOszA",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/XZVHmRvfDHM/hq720.jpg",
   },
   {
@@ -209,7 +208,7 @@ export const videos = [
     title: "Chandler, Ross & Joey being ICONIC bestfriends",
     creator: "Friends",
     category: "friends",
-    gif: "https://i.ytimg.com/an_webp/q8WgsfkofOM/mqdefault_6s.webp?du=3000&sqp=CNSMjJIG&rs=AOn4CLAJSexweRjEwxL50RZoSJWpX_jx6w",
+    logo: "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     img: "https://i.ytimg.com/vi/q8WgsfkofOM/hq720.jpg",
   },
   {
@@ -217,7 +216,7 @@ export const videos = [
     title: "Harvey & Alex Are Facing a Tough Deal",
     creator: "Suits",
     category: "suits",
-    gif: "https://i.ytimg.com/an_webp/i637OBxyWQY/mqdefault_6s.webp?du=3000&sqp=CJCTjJIG&rs=AOn4CLCvQ2URgRWgUJjYLFuyD8PbBphB5A",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Suits_season_7_dvd_cover.jpg",
     img: "https://i.ytimg.com/vi/i637OBxyWQY/hq720.jpg",
   },
   {
@@ -225,7 +224,7 @@ export const videos = [
     title: "Louis Identifies His Aggressor ",
     creator: "Suits",
     category: "suits",
-    gif: "https://i.ytimg.com/an_webp/a5boqgJQHWA/mqdefault_6s.webp?du=3000&sqp=COD9i5IG&rs=AOn4CLATIjoKEKOgqsCIh5pFXY3BhiQWSw",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Suits_season_7_dvd_cover.jpg",
     img: "https://i.ytimg.com/vi/a5boqgJQHWA/hq720.jpg",
   },
   {
@@ -233,7 +232,7 @@ export const videos = [
     title: "Harvey and Louis Try Couple Counseling",
     creator: "Suits",
     category: "suits",
-    gif: "https://i.ytimg.com/an_webp/WOEUNjY0nLw/mqdefault_6s.webp?du=3000&sqp=CLj5i5IG&rs=AOn4CLBfBhDMI33wshKOrySIOZFnz_5Phw",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Suits_season_7_dvd_cover.jpg",
     img: "https://i.ytimg.com/vi/WOEUNjY0nLw/hq720.jpg",
   },
   {
@@ -241,7 +240,7 @@ export const videos = [
     title: "''THIS IS OFFENSIVE!'' | Louis Gives Mike A Business Lesson",
     creator: "Suits",
     category: "suits",
-    gif: "https://i.ytimg.com/an_webp/apGv7QOoU58/mqdefault_6s.webp?du=3000&sqp=CIqUjJIG&rs=AOn4CLB83fHYssAK-kcPqzjp2kbqsY0FYQ",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Suits_season_7_dvd_cover.jpg",
     img: "https://i.ytimg.com/vi/apGv7QOoU58/hq720.jpg",
   },
   {
@@ -249,7 +248,7 @@ export const videos = [
     title: "Jessica, Louis, Harvey Getting High Together",
     creator: "Suits",
     category: "suits",
-    gif: "https://i.ytimg.com/an_webp/gd8XHU-iTwE/mqdefault_6s.webp?du=3000&sqp=CPn1i5IG&rs=AOn4CLD461aG9lM4jzmIMYEjid9zLNXm_Q",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Suits_season_7_dvd_cover.jpg",
     img: "https://i.ytimg.com/vi/gd8XHU-iTwE/hq720.jpg",
   },
   {
@@ -257,7 +256,7 @@ export const videos = [
     title: "Harvey Gets In The Ring With Sam",
     creator: "Suits",
     category: "suits",
-    gif: "https://i.ytimg.com/an_webp/LizWcUruPOA/mqdefault_6s.webp?du=3000&sqp=CODti5IG&rs=AOn4CLDg5GIKkjyVORXfLzaATs4UdKfidw",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Suits_season_7_dvd_cover.jpg",
     img: "https://i.ytimg.com/vi/LizWcUruPOA/hq720.jpg",
   },
 ];

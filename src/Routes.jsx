@@ -7,6 +7,7 @@ import {
   Error404Page,
   History,
   HomePage,
+  LibraryPage,
   Likes,
   Playlist,
   VideoListing,
@@ -18,7 +19,7 @@ import { SingleVideoPage } from "./pages/SingleVideoPage/SingleVideoPage";
 function RoutesPath() {
   return (
     <Routes>
-      <Route path="/:videoId" element={<SingleVideoPage />} />
+      <Route path="/videos/:videoId" element={<SingleVideoPage />} />
       <Route path="/" element={<HomePage />} />
       <Route path="/explore" element={<VideoListing />} />
         <Route path="*" element={<Error404Page />}></Route>
@@ -29,9 +30,10 @@ function RoutesPath() {
       </Route>
 
       <Route element={<RequireAuth />}>
+      <Route path="/library" element={<LibraryPage />} />
       <Route path="/liked-videos" element={<Likes />} />
-        <Route path="/playlist/:playlistId" element={<PlayListVideoList />} />
-        <Route path="/playlist" element={<Playlist />} />
+        <Route path="/playlists/:playlistId" element={<PlayListVideoList />} />
+        <Route path="/playlists" element={<Playlist />} />
         <Route path="/history" element={<History />} /> 
         <Route path="/watchLater" element={<WatchLater />} />
       </Route>

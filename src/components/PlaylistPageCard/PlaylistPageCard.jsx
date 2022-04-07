@@ -17,11 +17,11 @@ export function PlaylistPageCard({ card }) {
     cardImg = emptyImage1
   }
   return (
-    <div className="p-0 overflow-hidden relative card-overlay pointer">
+    <div className="p-0 overflow-hidden relative card-overlay pointer ">
         <div className="img-overlay" >
           <img src={cardImg} alt="video" className="res" />
         </div>
-        <div onClick={()=>navigate(`/playlist/${card._id}`)} className="card-overlay-content">
+        <div onClick={()=>navigate(`/playlists/${card._id}`)} className="card-overlay-content">
           <div className="h-100 flex content">
             <RiPlayListAddLine className="icon size-xs" />
             <h1>{playlistLength}</h1>

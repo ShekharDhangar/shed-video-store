@@ -8,7 +8,7 @@ import { useLocalStorageGetItem } from "../hooks/customHooks";
 import { getHistory } from "../serverCalls/historyCalls";
 const HistoryContext = createContext();
 function HistoryProvider({ children }) {
-  const [history, setHistory] = useState([]);
+  const [History, setHistory] = useState([]);
   const userToken=useLocalStorageGetItem("shed-video-token");
   
   useEffect(() => {
@@ -17,7 +17,7 @@ function HistoryProvider({ children }) {
         if (userToken) {
           const HistoryResponse = await getHistory(userToken);
           if (HistoryResponse) {
-            setHistory(HistoryResponse);
+            setHistory(HistoryResponse.data.history);
           }
         }
       } catch (error) {
@@ -27,7 +27,7 @@ function HistoryProvider({ children }) {
   }, []);
 
   return (
-    <HistoryContext.Provider value={{history,setHistory}}>
+    <HistoryContext.Provider value={{History,setHistory}}>
       {children}
     </HistoryContext.Provider>
   );

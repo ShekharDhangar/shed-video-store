@@ -17,7 +17,7 @@ import { useLocalStorageGetItem } from "../hooks/customHooks";
           if (userToken) {
             const LikesResponse = await getLikes(userToken);
             if (LikesResponse) {
-              setLikes(LikesResponse);
+              setLikes(LikesResponse.data.likes);
             }
           }
         } catch (error) {

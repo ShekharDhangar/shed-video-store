@@ -67,7 +67,7 @@ function AddToPlaylistBox({ setShowPlaylistMenu, video=""}) {
                 <input
                   type="checkbox"
                   onChange={(e) => checkBoxHandler(e, playlistItem)}
-                  checked={isPresentInState(playlistItem.videos, video)}
+                  checked={ isPresentInState(playlistItem.videos, video)}
                   className="checkbox"
                 />
 
