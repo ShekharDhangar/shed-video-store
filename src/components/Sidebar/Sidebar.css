@@ -1,8 +1,7 @@
 .sidebar-container{
     flex-direction: column;
     height: 100%;
-    position: sticky;
-    top: 10rem;
+    top:8rem;
     width: 12rem;
     z-index: 10;
     display: flex;
@@ -12,12 +11,13 @@
     background-color: var(--theme-clr);
 
 }
-.sidebar-icon-container{
+.sidebar-container .sidebar-icon-container{
     flex-direction: column;
-    padding: 1rem;
-    width: 100%;
+    padding: 7.5px;
+    width: 10rem;
     max-width: 100%;
     cursor: pointer;
+
 }
 .sidebar-icon-container .icon{
     margin: 5px 0;
@@ -28,36 +28,20 @@
     width: 2.5rem;
     height: 3rem;
 }
+
 .sidebar-icon-container:hover{
     background-color: var(--clr-grey);
 }
 
 @media only screen and (max-width:43.75em){
-    .sidebar-container{
-        margin-left: 0;
-        width: 100vw;
-        flex-direction: row;
-        top:auto;
-        bottom: 0;
-        padding-bottom: 5px;
-        position: fixed;
-        height: min-content;
-    }
-    .sidebar-icon-container{
-        margin: 0;
-        padding: 0 5px;
-    }
-    .sidebar-icon-container .icon{
-        margin: 3px 0;
-        width:2.5rem;
-        height: 2.5rem;
-    }
-    .clock-icon.icon{
-        width: 2.25rem;
-        height: 2.75rem;
-    }
-    .nav-icon-txt{
-        font-size: 1rem;
-    }
-  
+   .sidebar-container{
+       display: none;
+   }
+}
+
+.active .sidebar-icon-container{
+    background-color: var(--clr-grey);
+}
+.sidebar-icon-container .icon.size-xs,.nav-icon-txt{
+    color: var(--clr-white);
 }

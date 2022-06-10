@@ -16,17 +16,19 @@
   border-radius: 5px;
 }
 .video-details {
+  padding: 0 1rem;
   justify-content: flex-start;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 .video-desc-box {
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  margin-left: 1rem;
   max-height: 6rem;
 }
-
+.avatar-container{
+  margin-right: 1rem;
+}
 .creator-name,
 .video-title {
   justify-content: flex-start;

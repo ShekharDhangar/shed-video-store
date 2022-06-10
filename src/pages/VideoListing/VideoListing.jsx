@@ -2,6 +2,7 @@ import {
   Navbar,
   Sidebar,
   VideoCard,
+  MobileSidebar,
   Loading,
 } from "../../components/components";
 import { useVideoContext } from "../../context/context";
@@ -23,6 +24,7 @@ function VideoListing() {
       <div className="top"></div>
       <main className="main-wrapper">
         <Sidebar />
+        <MobileSidebar/>
         <div className="content-wrapper">
           <div className=" chip-container">
             {categories?.map(({ _id, categoryName }) => (

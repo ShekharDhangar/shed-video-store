@@ -1,3 +1,3 @@
-## Video Library Backend
-
-This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.
+A Video Library for SITCOMS,
+Where you can watch, add to a playlist, like, or add to watch later a video. Also, it's Mobile Responsive.
+Tech Stack: REACT JS. 
