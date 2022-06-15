@@ -29,7 +29,6 @@ function HomePage() {
           </div>
 
           <div className="pointer relative flex display-img-container w-100 ">
-            "dhangar"
             <img
               src="https://images6.alphacoders.com/542/thumb-1920-542776.jpg"
               className="display-img"
